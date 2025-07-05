@@ -11,7 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        macklin: ["var(--font-macklin-display)", "serif"],
+        inter: ["var(--font-inter)", "serif"],
         sans: ["var(--font-source-sans-3)", "system-ui", "sans-serif"],
       },
       colors: {

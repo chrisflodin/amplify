@@ -53,7 +53,7 @@ export const projects: Project[] = [
     relatedProjects: [
       {
         title: "Hartwall App",
-        category: "App Development",
+        category: "App",
         image: "/images/hartwall.png",
         slug: "hartwall-app",
       },
@@ -68,9 +68,9 @@ export const projects: Project[] = [
   {
     id: "2",
     slug: "hartwall-app",
-    title: "Hartwall App",
+    title: "Skistar stärker fjällupplevelsen med bättre digitala tjänster",
     subtitle: "Mobil app för premiumvarumärke",
-    category: "App Development",
+    category: "App",
     year: "2024",
     duration: "6 månader",
     technologies: ["React Native", "Node.js", "PostgreSQL", "Firebase"],
@@ -183,7 +183,7 @@ export const projects: Project[] = [
       },
       {
         title: "Hartwall App",
-        category: "App Development",
+        category: "App",
         image: "/images/hartwall.png",
         slug: "hartwall-app",
       },

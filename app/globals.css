@@ -15,7 +15,7 @@ body {
 @layer components {
   /* Hero Title - Largest heading for landing pages */
   .hero-title {
-    @apply text-6xl lg:text-[90px] font-macklin font-medium leading-tight;
+    @apply text-6xl lg:text-[90px] font-inter font-medium leading-tight;
   }
 
   .hero-subtitle {
@@ -24,30 +24,30 @@ body {
 
   /* Heading System - Reusable throughout the site */
   .heading-1 {
-    @apply text-4xl lg:text-5xl font-macklin font-bold leading-tight text-gray-900;
+    @apply text-4xl lg:text-5xl font-inter font-bold leading-tight text-gray-900;
   }
 
   .heading-2 {
-    @apply text-2xl lg:text-3xl font-macklin font-bold leading-tight text-gray-900;
+    @apply text-2xl lg:text-3xl font-inter font-bold leading-tight text-gray-900;
   }
 
   .heading-3 {
-    @apply text-xl lg:text-2xl font-macklin font-bold leading-tight text-gray-900;
+    @apply text-xl lg:text-2xl font-inter font-bold leading-tight text-gray-900;
   }
 
   /* Page titles - For main page headings */
   .page-title {
-    @apply text-3xl lg:text-4xl font-macklin font-bold leading-tight text-gray-900 mb-8;
+    @apply text-3xl lg:text-4xl font-inter font-bold leading-tight text-gray-900 mb-8;
   }
 
   /* Section titles */
   .section-title {
-    @apply text-2xl lg:text-3xl font-macklin font-bold leading-tight text-gray-900 mb-6;
+    @apply text-2xl lg:text-3xl font-inter font-bold leading-tight text-gray-900 mb-6;
   }
 
   /* Card titles */
   .card-title {
-    @apply text-xl font-macklin font-semibold leading-tight text-gray-900;
+    @apply text-xl font-inter font-semibold leading-tight text-gray-900;
   }
 
   /* Paragraph System - Reusable throughout the site */

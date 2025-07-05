@@ -45,7 +45,7 @@ When working with service and category pages, it's important to understand how d
 ```tsx
 // In category-hero-section.tsx
 <p className="text-sm uppercase tracking-wide mb-4">{data.title}</p>
-<h1 className="text-5xl font-macklin font-light mb-8">{data.subtitle}</h1>
+<h1 className="text-5xl font-inter font-light mb-8">{data.subtitle}</h1>
 
 // Service navigation
 {services.map((service) => (

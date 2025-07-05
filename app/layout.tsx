@@ -1,7 +1,7 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import type { Metadata } from "next";
-import { macklinDisplay, source_Sans_3 } from "./fonts";
+import { inter, source_Sans_3 } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="sv">
       <body
-        className={`${source_Sans_3.className} ${macklinDisplay.variable} antialiased`}
+        className={`${source_Sans_3.className} ${inter.variable} antialiased`}
       >
         <Header />
         {children}

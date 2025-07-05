@@ -26,53 +26,44 @@ export default function UppdragPage({ params }: UppdragPageProps) {
   return (
     <main className="bg-brand-black text-white">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center pt-20 pb-16">
+      <section className="flex items-center pt-[6vw] pb-[3vw]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Left Column - Category and Title */}
             <div className="space-y-8">
-              <div className="space-y-6">
-                <Badge className="bg-white/10 backdrop-blur-sm border-white/20 text-white">
+              <div className="space-y-2">
+                <h2 className="text-3xl lg:text-5xl font-inter font-bold text-gray-300 uppercase tracking-wider">
                   {project.category}
-                </Badge>
-                <h1 className="text-5xl lg:text-6xl font-macklin font-bold leading-tight">
+                </h2>
+                <h1 className="text-5xl lg:text-6xl font-inter font-bold leading-tight">
                   {project.title}
                 </h1>
-                <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl">
-                  {project.heroDescription}
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-white text-brand-black hover:bg-gray-100 font-semibold px-8 py-4"
-                >
-                  Se liknande uppdrag
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white/20 text-white hover:bg-white/10 px-8 py-4"
-                >
-                  Kontakta oss
-                </Button>
               </div>
             </div>
 
-            {/* Right Column - Project Image */}
-            <div className="relative">
-              <div className="relative h-[600px] w-full rounded-3xl overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              </div>
+            {/* Right Column - Description */}
+            <div className="flex items-start">
+              <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed mt-12 lg:mt-16">
+                {project.heroDescription}
+              </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Large Project Image */}
+      <section className="pb-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative h-[70vh] w-full rounded-3xl overflow-hidden">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
           </div>
         </div>
       </section>
@@ -85,13 +76,13 @@ export default function UppdragPage({ params }: UppdragPageProps) {
               <h3 className="text-sm font-medium text-white/60 uppercase tracking-wider">
                 Uppdragstart
               </h3>
-              <p className="text-4xl font-macklin font-bold">{project.year}</p>
+              <p className="text-4xl font-inter font-bold">{project.year}</p>
             </div>
             <div className="space-y-2">
               <h3 className="text-sm font-medium text-white/60 uppercase tracking-wider">
                 Leveranstid
               </h3>
-              <p className="text-4xl font-macklin font-bold">
+              <p className="text-4xl font-inter font-bold">
                 {project.duration}
               </p>
             </div>
@@ -129,7 +120,7 @@ export default function UppdragPage({ params }: UppdragPageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
             {/* Background */}
             <div className="space-y-6">
-              <h2 className="text-3xl font-macklin font-bold">Bakgrund</h2>
+              <h2 className="text-3xl font-inter font-bold">Bakgrund</h2>
               <div className="space-y-4 text-gray-300">
                 {project.background.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
@@ -139,7 +130,7 @@ export default function UppdragPage({ params }: UppdragPageProps) {
 
             {/* Our Role */}
             <div className="space-y-6">
-              <h2 className="text-3xl font-macklin font-bold">Vår roll</h2>
+              <h2 className="text-3xl font-inter font-bold">Vår roll</h2>
               <div className="space-y-4 text-gray-300">
                 {project.role.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
@@ -149,7 +140,7 @@ export default function UppdragPage({ params }: UppdragPageProps) {
 
             {/* Results */}
             <div className="space-y-6">
-              <h2 className="text-3xl font-macklin font-bold">Resultat</h2>
+              <h2 className="text-3xl font-inter font-bold">Resultat</h2>
               <div className="space-y-4 text-gray-300">
                 {project.resultsDescription.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
@@ -164,7 +155,7 @@ export default function UppdragPage({ params }: UppdragPageProps) {
       <section className="py-20 bg-white/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-macklin font-bold mb-6">
+            <h2 className="text-4xl font-inter font-bold mb-6">
               Visuella resultat
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -177,7 +168,7 @@ export default function UppdragPage({ params }: UppdragPageProps) {
             <Card className="bg-white/5 border border-white/10 overflow-hidden">
               <CardContent className="p-8">
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-macklin font-bold">Före</h3>
+                  <h3 className="text-2xl font-inter font-bold">Före</h3>
                   <div className="aspect-video bg-gray-800 rounded-lg flex items-center justify-center">
                     <span className="text-gray-400">Gammal lösning</span>
                   </div>
@@ -191,7 +182,7 @@ export default function UppdragPage({ params }: UppdragPageProps) {
             <Card className="bg-white/5 border border-white/10 overflow-hidden">
               <CardContent className="p-8">
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-macklin font-bold">Efter</h3>
+                  <h3 className="text-2xl font-inter font-bold">Efter</h3>
                   <div className="aspect-video bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                     <span className="text-white font-semibold">
                       Ny modern lösning
@@ -212,7 +203,7 @@ export default function UppdragPage({ params }: UppdragPageProps) {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-macklin font-bold mb-6">
+            <h2 className="text-4xl font-inter font-bold mb-6">
               Nyckeltal och resultat
             </h2>
           </div>
@@ -225,7 +216,7 @@ export default function UppdragPage({ params }: UppdragPageProps) {
               >
                 <CardContent className="p-8">
                   <div
-                    className={`text-5xl font-macklin font-bold mb-4 ${metric.color}`}
+                    className={`text-5xl font-inter font-bold mb-4 ${metric.color}`}
                   >
                     {metric.value}
                   </div>
@@ -242,7 +233,7 @@ export default function UppdragPage({ params }: UppdragPageProps) {
       <section className="py-20 border-t border-white/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-macklin font-bold mb-6">
+            <h2 className="text-4xl font-inter font-bold mb-6">
               Relaterade uppdrag
             </h2>
             <p className="text-xl text-gray-300">
@@ -318,7 +309,7 @@ export default function UppdragPage({ params }: UppdragPageProps) {
       <section className="py-20 bg-white/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-4xl font-macklin font-bold">
+            <h2 className="text-4xl font-inter font-bold">
               Redo att transformera ert uppdrag?
             </h2>
             <p className="text-xl text-gray-300">

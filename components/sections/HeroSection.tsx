@@ -37,43 +37,81 @@ export default function HeroSection() {
 
           {/* Right Column - Visual Elements */}
           <div className="relative">
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-4">
               {/* App Cards */}
-              <div className="space-y-6">
-                <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-sm font-medium">
-                      Stockholm Plastikkirurgi
-                    </span>
-                    <div className="w-8 h-8 bg-white/20 rounded-lg"></div>
+              <div className="space-y-4">
+                <div className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 text-white hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/10">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-6">
+                      <span className="text-sm font-medium text-white/80">
+                        Stockholm Plastikkirurgi
+                      </span>
+                      <div className="w-10 h-10 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:bg-white/20 transition-all duration-300">
+                        <div className="w-4 h-4 bg-white/60 rounded-sm"></div>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2 text-white">
+                      Marknadsföring
+                    </h3>
+                    <div className="w-12 h-1 bg-white/30 rounded-full group-hover:w-16 group-hover:bg-white/50 transition-all duration-300"></div>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Marknadsföring</h3>
                 </div>
 
-                <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 text-white">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-sm font-medium">Hartwall</span>
-                    <div className="w-8 h-8 bg-white/20 rounded-lg"></div>
+                <div className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 text-white hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/10">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-6">
+                      <span className="text-sm font-medium text-white/80">
+                        Hartwall
+                      </span>
+                      <div className="w-10 h-10 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:bg-white/20 transition-all duration-300">
+                        <div className="w-4 h-4 bg-white/60 rounded-sm"></div>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2 text-white">
+                      App
+                    </h3>
+                    <div className="w-12 h-1 bg-white/30 rounded-full group-hover:w-16 group-hover:bg-white/50 transition-all duration-300"></div>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">App</h3>
                 </div>
               </div>
 
-              <div className="space-y-6 mt-8">
-                <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 text-white">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-sm font-medium">CRDBAG</span>
-                    <div className="w-8 h-8 bg-white/20 rounded-lg"></div>
+              <div className="space-y-4 mt-8">
+                <div className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 text-white hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/10">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-6">
+                      <span className="text-sm font-medium text-white/80">
+                        CRDBAG
+                      </span>
+                      <div className="w-10 h-10 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:bg-white/20 transition-all duration-300">
+                        <div className="w-4 h-4 bg-white/60 rounded-sm"></div>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2 text-white">
+                      App
+                    </h3>
+                    <div className="w-12 h-1 bg-white/30 rounded-full group-hover:w-16 group-hover:bg-white/50 transition-all duration-300"></div>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">App</h3>
                 </div>
 
-                <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-6 text-white">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-sm font-medium">SE ALLA PROJEKT</span>
-                    <div className="w-8 h-8 bg-white/20 rounded-lg"></div>
+                <div className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 text-white hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/10">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-6">
+                      <span className="text-sm font-medium text-white/80">
+                        SE ALLA PROJEKT
+                      </span>
+                      <div className="w-10 h-10 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:bg-white/20 transition-all duration-300">
+                        <div className="w-4 h-4 bg-white/60 rounded-sm"></div>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2 text-white">
+                      Projekt
+                    </h3>
+                    <div className="w-12 h-1 bg-white/30 rounded-full group-hover:w-16 group-hover:bg-white/50 transition-all duration-300"></div>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">App</h3>
                 </div>
               </div>
             </div>

@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  /* Hero Title - Largest heading for landing pages */
+  .hero-title {
+    @apply text-6xl lg:text-[90px] font-macklin font-medium leading-tight;
+  }
+
+  .hero-subtitle {
+    @apply text-2xl lg:text-[34px] max-w-2xl font-sans font-medium leading-tight mb-4;
+  }
+
+  /* Heading System - Reusable throughout the site */
+  .heading-1 {
+    @apply text-4xl lg:text-5xl font-macklin font-bold leading-tight text-gray-900;
+  }
+
+  .heading-2 {
+    @apply text-2xl lg:text-3xl font-macklin font-bold leading-tight text-gray-900;
+  }
+
+  .heading-3 {
+    @apply text-xl lg:text-2xl font-macklin font-bold leading-tight text-gray-900;
+  }
+
+  /* Page titles - For main page headings */
+  .page-title {
+    @apply text-3xl lg:text-4xl font-macklin font-bold leading-tight text-gray-900 mb-8;
+  }
+
+  /* Section titles */
+  .section-title {
+    @apply text-2xl lg:text-3xl font-macklin font-bold leading-tight text-gray-900 mb-6;
+  }
+
+  /* Card titles */
+  .card-title {
+    @apply text-xl font-macklin font-semibold leading-tight text-gray-900;
+  }
+
+  /* Paragraph System - Reusable throughout the site */
+  .paragraph-lead {
+    @apply text-lg lg:text-xl font-sans font-normal leading-relaxed text-brand-black mb-4;
+  }
+
+  .paragraph-body {
+    @apply text-base lg:text-lg font-sans font-normal leading-relaxed text-brand-black mb-4;
+  }
+
+  .paragraph-small {
+    @apply text-sm lg:text-base font-sans font-normal leading-relaxed text-brand-black mb-3;
+  }
+
+  .paragraph-caption {
+    @apply text-xs lg:text-sm font-sans font-normal leading-relaxed text-brand-black mb-2;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Text Colors */
+    --text-dark: 0 2% 10%; /* Nearly black - dark sections */ /* hsl(0, 2%, 10%) */
+    --text-light: 0 0% 100%; /* White - dark sections */ /* hsl(0, 2%, 10%) */
+
+    /* Background Colors */
+    --bg-primary: 0 0% 100%; /* White - main background */ /* hsl(0 0% 100%) */
+    --bg-dark: 0 2% 10%; /* Nearly black - dark sections */ /* hsl(0, 2%, 10%) */
+
+    /* Custom Brand Colors */
+    /* Warm muted brown */
+    --brand-primary: 30 25% 57%; /* hsl(30, 25%, 27%) */
+    --brand-secondary: 45 33% 92%; /* Light cream - main background */ /* hsl(45, 33%, 92%) */
+    --brand-tertiary: 34 32% 87%; /* Soft beige - tertiary background */ /* hsl(34, 32%, 87%) */
+    --brand-black: 0 2% 5%; /* Nearly black - dark sections */ /* hsl(0, 2%, 10%) */
+    --brand-success: 120 60% 45%; /* hsl(135, 50%, 45%) */
+    --brand-success-foreground: 0 0% 100%; /* hsl(0, 0%, 100%) */
+    --brand-warning: 35 95% 55%; /* hsl(35, 95%, 55%) */
+    --brand-warning-foreground: 0 0% 20%; /* hsl(0, 0%, 20%) */
+    --brand-error: 0 75% 55%; /* hsl(0, 75%, 55%) */
+    --brand-error-foreground: 0 0% 100%; /* hsl(0, 0%, 100%) */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

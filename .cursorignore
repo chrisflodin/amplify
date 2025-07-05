@@ -1,0 +1,30 @@
+# Cursor search exclusions
+
+# Next.js compiled files
+/.next/
+/out/
+/build/
+
+# Dependencies
+/node_modules/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp 

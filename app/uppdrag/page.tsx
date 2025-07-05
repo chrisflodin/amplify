@@ -11,7 +11,7 @@ export default function UppdragPage() {
   return (
     <main className="bg-brand-black text-white">
       {/* Hero Section */}
-      <section className="pt-32 pb-20">
+      <section className="pt-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8">
             <div className="space-y-6">
@@ -46,14 +46,17 @@ export default function UppdragPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
-                    {/* Category and Title Overlay - Bottom Left */}
-                    <div className="absolute bottom-6 left-6 space-y-2">
-                      <h3 className="text-xl font-inter font-bold text-gray-300 uppercase tracking-wider">
-                        {project.category}
-                      </h3>
-                      <h2 className="text-3xl lg:text-4xl font-inter font-bold text-white leading-tight">
-                        {project.title}
-                      </h2>
+                    {/* Category and Title Overlay - Bottom with glass morphism */}
+                    <div className="absolute bottom-0 left-0 right-0 z-10 p-6 bg-black/80 backdrop-blur-sm rounded-b-3xl">
+                      <div className="space-y-2">
+                        <span className="text-base font-bold text-white uppercase tracking-wider">
+                          {project.category}
+                        </span>
+                        <h3 className="text-2xl font-bold text-white">
+                          {project.title}
+                        </h3>
+                        <div className="w-16 h-1.5 bg-white/30 rounded-full group-hover:w-24 group-hover:bg-white/50 transition-all duration-300"></div>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -1,34 +1,33 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { ContactSection } from "@/components/sections";
 import { getProjectBySlug, getRelatedProjects } from "@/lib/projects";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-interface UppdragPageProps {
-  params: {
+interface ProjectPageProps {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default function UppdragPage({ params }: UppdragPageProps) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     notFound();
   }
 
-  const relatedProjects = getRelatedProjects(params.slug, 3);
+  const relatedProjects = getRelatedProjects(slug, 3);
 
   return (
     <main className="bg-brand-black text-white">
       {/* Hero Section */}
-      <section className="flex items-center pt-[6vw] pb-[3vw]">
+      <section className="flex items-center pt-[18vw] md:pt-[10vw] pb-[3vw]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Left Column - Category and Title */}
             <div className="space-y-8">
               <div className="space-y-2">
@@ -43,7 +42,7 @@ export default function UppdragPage({ params }: UppdragPageProps) {
 
             {/* Right Column - Description */}
             <div className="flex items-start">
-              <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed mt-12 lg:mt-16">
+              <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed lg:mt-12">
                 {project.heroDescription}
               </p>
             </div>
@@ -69,9 +68,9 @@ export default function UppdragPage({ params }: UppdragPageProps) {
       </section>
 
       {/* Project Details */}
-      <section className="py-16 border-t border-white/10">
+      <section className="border-white/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-2">
               <h3 className="text-sm font-medium text-white/60 uppercase tracking-wider">
                 Uppdragstart
@@ -84,30 +83,6 @@ export default function UppdragPage({ params }: UppdragPageProps) {
               </h3>
               <p className="text-4xl font-inter font-bold">
                 {project.duration}
-              </p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-sm font-medium text-white/60 uppercase tracking-wider">
-                Tekniker
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech) => (
-                  <Badge
-                    key={tech}
-                    variant="outline"
-                    className="border-white/20 text-white text-sm"
-                  >
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-sm font-medium text-white/60 uppercase tracking-wider">
-                Resultat
-              </h3>
-              <p className="text-lg font-medium text-green-400">
-                {project.results}
               </p>
             </div>
           </div>
@@ -152,132 +127,59 @@ export default function UppdragPage({ params }: UppdragPageProps) {
       </section>
 
       {/* Visual Results */}
-      <section className="py-20 bg-white/5">
+
+      {/* Other Projects */}
+      <section className="py-20 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-inter font-bold mb-6">
-              Visuella resultat
+            <h2 className="text-4xl font-inter font-bold mb-2">
+              Other Projects
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Se hur vi transformerade {project.title}s digitala närvaro från
-              utdaterad till modern, konverteringsfokuserad upplevelse.
+            <p className="text-xl text-gray-300">
+              Se fler exempel av vårt arbete
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <Card className="bg-white/5 border border-white/10 overflow-hidden">
-              <CardContent className="p-8">
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-inter font-bold">Före</h3>
-                  <div className="aspect-video bg-gray-800 rounded-lg flex items-center justify-center">
-                    <span className="text-gray-400">Gammal lösning</span>
-                  </div>
-                  <p className="text-gray-300">
-                    Föråldrad design, dålig användarupplevelse, låg konvertering
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white/5 border border-white/10 overflow-hidden">
-              <CardContent className="p-8">
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-inter font-bold">Efter</h3>
-                  <div className="aspect-video bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                    <span className="text-white font-semibold">
-                      Ny modern lösning
-                    </span>
-                  </div>
-                  <p className="text-gray-300">
-                    Modern design, optimerad för konvertering, förbättrad
-                    användarupplevelse
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Key Metrics */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-inter font-bold mb-6">
-              Nyckeltal och resultat
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {project.keyMetrics.map((metric, index) => (
-              <Card
-                key={index}
-                className="bg-white/5 border border-white/10 text-center"
-              >
-                <CardContent className="p-8">
-                  <div
-                    className={`text-5xl font-inter font-bold mb-4 ${metric.color}`}
-                  >
-                    {metric.value}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">{metric.label}</h3>
-                  <p className="text-gray-300">{metric.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Related Projects */}
-      <section className="py-20 border-t border-white/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-inter font-bold mb-6">
-              Relaterade uppdrag
-            </h2>
-            <p className="text-xl text-gray-300">
-              Se fler exempel på vårt arbete inom digital transformation
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {relatedProjects.map((relatedProject) => (
               <Link
                 href={`/uppdrag/${relatedProject.slug}`}
                 key={relatedProject.slug}
               >
-                <Card className="group bg-white/5 border border-white/10 overflow-hidden hover:bg-white/10 transition-all duration-300">
-                  <div className="aspect-video relative overflow-hidden">
+                <div className="group relative overflow-hidden rounded-3xl hover:scale-[1.02] transition-all duration-500">
+                  {/* Large Project Image */}
+                  <div className="relative h-[60vh] overflow-hidden">
                     <Image
                       src={relatedProject.image}
                       alt={relatedProject.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
-                    <div className="absolute top-4 left-4">
-                      <Badge className="bg-white/10 backdrop-blur-sm border-white/20 text-white">
-                        {relatedProject.category}
-                      </Badge>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                    {/* Category and Title Overlay - Bottom with glass morphism */}
+                    <div className="absolute bottom-0 left-0 right-0 z-10 p-6 bg-black/80 backdrop-blur-sm rounded-b-3xl">
+                      <div className="space-y-2">
+                        <span className="text-base font-bold text-white uppercase tracking-wider">
+                          {relatedProject.category}
+                        </span>
+                        <h3 className="text-2xl font-bold text-white">
+                          {relatedProject.title}
+                        </h3>
+                        <div className="w-16 h-1.5 bg-white/30 rounded-full group-hover:w-24 group-hover:bg-white/50 transition-all duration-300"></div>
+                      </div>
                     </div>
                   </div>
-                  <CardContent className="p-6">
-                    <div className="space-y-2">
-                      <h3 className="text-xl font-semibold">
-                        {relatedProject.title}
-                      </h3>
-                    </div>
-                  </CardContent>
-                </Card>
+                </div>
               </Link>
             ))}
 
             {/* View All Projects Card */}
             <Link href="/uppdrag">
-              <Card className="group bg-white/5 border border-white/10 overflow-hidden hover:bg-white/10 transition-all duration-300 flex items-center justify-center h-full min-h-[300px]">
-                <CardContent className="p-6 text-center">
-                  <div className="space-y-4">
+              <div className="group relative overflow-hidden rounded-3xl hover:scale-[1.02] transition-all duration-500">
+                <div className="relative h-[60vh] bg-white/5 flex items-center justify-center">
+                  <div className="text-center space-y-4">
                     <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mx-auto group-hover:bg-white/20 transition-colors">
                       <svg
                         className="w-6 h-6 text-white"
@@ -293,47 +195,19 @@ export default function UppdragPage({ params }: UppdragPageProps) {
                         />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-semibold">Se alla uppdrag</h3>
-                    <p className="text-gray-300 text-sm">
-                      Utforska vårt kompletta uppdragsportfölj
-                    </p>
+                    <h3 className="text-2xl font-bold text-white">
+                      Se alla uppdrag
+                    </h3>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-white/5">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-4xl font-inter font-bold">
-              Redo att transformera ert uppdrag?
-            </h2>
-            <p className="text-xl text-gray-300">
-              Låt oss hjälpa er att skapa en digital upplevelse som levererar
-              resultat. Kontakta oss för en kostnadsfri konsultation.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-white text-brand-black hover:bg-gray-100 font-semibold px-8 py-4"
-              >
-                Starta ett uppdrag
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/20 text-white hover:bg-white/10 px-8 py-4"
-              >
-                Se alla uppdrag
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Contact Section */}
+      <ContactSection />
     </main>
   );
 }

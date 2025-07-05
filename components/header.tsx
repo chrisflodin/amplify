@@ -7,21 +7,24 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Uppdrag", href: "#uppdrag" },
-    { name: "Om oss", href: "#om-oss" },
-    { name: "Lediga jobb", href: "#lediga-jobb" },
-    { name: "Nyheter", href: "#nyheter" },
-    { name: "Kontakt", href: "#kontakt" },
+    { name: "Uppdrag", href: "/uppdrag", type: "page" },
+    { name: "Om oss", href: "#om-oss", type: "anchor" },
+    { name: "Lediga jobb", href: "#lediga-jobb", type: "anchor" },
+    { name: "Nyheter", href: "#nyheter", type: "anchor" },
+    { name: "Kontakt", href: "#kontakt", type: "anchor" },
   ];
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
+    type: string
   ) => {
-    e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (type === "anchor") {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
     setIsMenuOpen(false);
   };
@@ -46,7 +49,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
+                onClick={(e) => handleNavClick(e, item.href, item.type)}
                 className="text-white hover:text-brand-black transition-colors font-medium text-lg"
               >
                 {item.name}
@@ -94,7 +97,7 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   className="text-gray-700 hover:text-brand-black block px-3 py-2 rounded-md text-base font-medium"
-                  onClick={(e) => handleNavClick(e, item.href)}
+                  onClick={(e) => handleNavClick(e, item.href, item.type)}
                 >
                   {item.name}
                 </Link>

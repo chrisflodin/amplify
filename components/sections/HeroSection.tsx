@@ -11,6 +11,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function HeroSection() {
@@ -22,18 +23,22 @@ export default function HeroSection() {
     {
       company: "Stockholm Plastikkirurgi",
       title: "Marknadsföring",
+      slug: "stockholm-plastikkirurgi",
     },
     {
       company: "Hartwall",
       title: "App Development",
+      slug: "hartwall-app",
     },
     {
       company: "CRDBAG",
       title: "E-commerce",
+      slug: "crdbag-ecommerce",
     },
     {
-      company: "SE ALLA PROJEKT",
-      title: "Alla Projekt",
+      company: "SE ALLA UPPDRAG",
+      title: "Alla Uppdrag",
+      slug: "uppdrag",
     },
   ];
 
@@ -48,6 +53,19 @@ export default function HeroSection() {
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
+  }, [api]);
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    const autoScroll = setInterval(() => {
+      api.scrollNext();
+    }, 5000);
+
+    return () => clearInterval(autoScroll);
   }, [api]);
 
   return (
@@ -120,38 +138,43 @@ export default function HeroSection() {
                   {cards.map((card, index) => (
                     <CarouselItem key={index} className="pt-2 basis-1/2">
                       <div className="p-1">
-                        <Card className="group relative overflow-hidden rounded-3xl border border-white/10 text-white hover:scale-[1.01] transition-all duration-500 hover:shadow-2xl h-60 ">
-                          {/* Background Image */}
-                          <div className="absolute inset-0">
-                            <Image
-                              src="/images/hartwall.png"
-                              alt={card.title}
-                              fill
-                              className="object-cover"
-                              sizes="(max-width: 768px) 100vw, 50vw"
-                            />
-                          </div>
-
-                          {/* Glass morphism overlay */}
-
-                          {/* Gradient overlay on hover */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                          <CardContent className="absolute bottom-0 left-0 right-0 z-10 p-4 bg-black/80 backdrop-blur-sm rounded-b-xl">
-                            <div className="flex items-center justify-between">
-                              <span className="text-base font-bold text-white">
-                                {card.title}
-                              </span>
-                              {/* <div className="w-10 h-10 bg-white/10 rounded-3xl backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:bg-white/20 transition-all duration-300">
-                                <div className="w-5 h-5 bg-white/60 rounded-lg"></div>
-                                </div> */}
+                        <Link
+                          href={
+                            card.slug === "uppdrag"
+                              ? "/uppdrag"
+                              : `/uppdrag/${card.slug}`
+                          }
+                        >
+                          <Card className="group relative overflow-hidden rounded-3xl border border-white/10 text-white hover:scale-[1.01] transition-all duration-500 hover:shadow-2xl h-60 cursor-pointer">
+                            {/* Background Image */}
+                            <div className="absolute inset-0">
+                              <Image
+                                src="/images/hartwall.png"
+                                alt={card.title}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                              />
                             </div>
-                            <h3 className="text-2xl font-bold mb-3 text-white">
-                              {card.company}
-                            </h3>
-                            <div className="w-16 h-1.5 bg-white/30 rounded-full group-hover:w-24 group-hover:bg-white/50 transition-all duration-300"></div>
-                          </CardContent>
-                        </Card>
+
+                            {/* Glass morphism overlay */}
+
+                            {/* Gradient overlay on hover */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                            <CardContent className="absolute bottom-0 left-0 right-0 z-10 p-4 bg-black/80 backdrop-blur-sm rounded-b-xl">
+                              <div className="flex items-center justify-between">
+                                <span className="text-base font-bold text-white">
+                                  {card.title}
+                                </span>
+                              </div>
+                              <h3 className="text-2xl font-bold mb-3 text-white">
+                                {card.company}
+                              </h3>
+                              <div className="w-16 h-1.5 bg-white/30 rounded-full group-hover:w-24 group-hover:bg-white/50 transition-all duration-300"></div>
+                            </CardContent>
+                          </Card>
+                        </Link>
                       </div>
                     </CarouselItem>
                   ))}

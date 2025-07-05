@@ -1,0 +1,21 @@
+# Cursor Rules for Stockholm Plastikkirurgi
+
+## Design System & Styling Guidelines
+
+### Color Usage
+
+- **Primary text color**: Always use `text-brand-black` for main text content
+- **Brand colors**: Use brand-specific color classes when available
+- **Consistency**: Maintain consistent color usage across all components
+
+### File Structure
+
+- Components go in `/components/` directory
+- UI components go in `/components/ui/`
+- Sections go in `/components/sections/`
+- Services go in `/services/` directory
+- Types go in `/types/` directory
+
+### Components
+
+- **Image component**: Always use the nextjs image component when using images.

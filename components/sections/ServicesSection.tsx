@@ -1,28 +1,40 @@
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function ServicesSection() {
   return (
-    <section id="om-oss" className="py-20 bg-white">
+    <section id="om-oss" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h2 className="section-title">
-              Upptäck hur vi hjälper våra kunder att nå sina mål
-            </h2>
-            <p className="paragraph-body text-gray-600">
-              Digitala gränssnitt behöver inte vara fula, komplicerade eller
-              krascha. Vi designar och utvecklar projekt med slutanvändaren i
-              åtanke.
-            </p>
-            <Button className="bg-brand-black text-white hover:bg-gray-800">
-              Se alla uppdrag
-            </Button>
-          </div>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-inter font-bold text-brand-black mb-6">
+            Upptäck hur vi hjälper våra
+            <br />
+            kunder att nå sina mål
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Digitala gränssnitt behöver inte vara fula, komplicerade eller
+            krascha. Vi designar och utvecklar projekt med slutanvändaren i
+            åtanke.
+          </p>
+        </div>
 
-          <div className="rounded-3xl overflow-hidden">
-            <div className="aspect-video bg-gradient-to-r from-gray-100 to-gray-200 flex items-center justify-center">
-              <span className="text-gray-500">Hero Image Placeholder</span>
-            </div>
+        <div className="mb-12 text-center">
+          <Button className="bg-brand-black text-white hover:bg-gray-800 px-8 py-4 text-lg font-semibold">
+            Se alla uppdrag
+          </Button>
+        </div>
+
+        <div className="relative rounded-3xl overflow-hidden bg-white shadow-2xl">
+          <div className="aspect-[16/9] relative">
+            <Image
+              src="/images/hartwall.png"
+              alt="Modern retail experience"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+            {/* Optional overlay for better text contrast if needed */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
           </div>
         </div>
       </div>

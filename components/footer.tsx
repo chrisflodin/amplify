@@ -21,52 +21,17 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
-                  SkiStar
+                  Hartwall
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
-                  Hästens Restore
+                  CRDBAG
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
-                  Ica ToGo
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Barncancerfonden
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  ICA - Ordersystem
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Trifam
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  CIBoost
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Bokadirekt
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Jula
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Equestrian Stockholm
+                  Stockholm Plastikkirurgi
                 </Link>
               </li>
             </ul>

@@ -1,11 +1,9 @@
 "use client";
 
 import {
-  ClientShowcaseSection,
+  ArticlesSection,
   ContactSection,
   HeroSection,
-  KPIMonitoringSection,
-  NewsSection,
   ServicesSection,
   TestimonialsSection,
 } from "@/components/sections";
@@ -14,11 +12,11 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <ClientShowcaseSection />
-      <ServicesSection />
-      <KPIMonitoringSection />
       <TestimonialsSection />
-      <NewsSection />
+      {/* <ClientShowcaseSection /> */}
+      <ServicesSection />
+      {/* <KPIMonitoringSection /> */}
+      <ArticlesSection />
       <ContactSection />
     </main>
   );

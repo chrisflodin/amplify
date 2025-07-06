@@ -18,6 +18,7 @@ export default function HeroSection() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   const cards = [
     {
@@ -55,9 +56,9 @@ export default function HeroSection() {
     });
   }, [api]);
 
-  // Auto-scroll functionality
+  // Auto-scroll functionality - pause when hovered
   useEffect(() => {
-    if (!api) {
+    if (!api || isHovered) {
       return;
     }
 
@@ -66,7 +67,7 @@ export default function HeroSection() {
     }, 5000);
 
     return () => clearInterval(autoScroll);
-  }, [api]);
+  }, [api, isHovered]);
 
   return (
     <section className="bg-brand-black text-white min-h-screen flex items-center pt-16">
@@ -80,7 +81,8 @@ export default function HeroSection() {
               </h1>
               <p className="hero-subtitle text-gray-300">
                 Vi har hjälpt några av Sveriges mest framgångsrika entreprenörer
-                att växla upp. Gör det du med.
+                att växa. <br />
+                Gör det du med.
               </p>
             </div>
 
@@ -101,7 +103,11 @@ export default function HeroSection() {
           </div>
 
           {/* Right Column - Vertical Carousel */}
-          <div className="relative h-[400px] w-full flex items-center mt-10">
+          <div
+            className="relative h-[400px] w-full flex items-center mt-10"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             {/* Carousel Container */}
             <div className="flex-1 h-full relative">
               {/* Loading placeholder */}

@@ -25,8 +25,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     <main className="bg-white min-h-screen">
       {/* Article Header */}
       <section className="pt-32 pb-16 bg-brand-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto">
             {/* Breadcrumb */}
             <div className="mb-8">
               <Link
@@ -45,9 +45,14 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl lg:text-6xl font-inter font-bold text-white mb-8 leading-tight">
+            <h1 className="text-4xl lg:text-6xl font-inter font-bold text-white mb-6 leading-tight">
               {article.title}
             </h1>
+
+            {/* Subtitle */}
+            <p className="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed max-w-3xl">
+              {article.excerpt}
+            </p>
 
             {/* Article Meta */}
             <div className="flex flex-wrap items-center gap-6 text-gray-300">
@@ -112,28 +117,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         </div>
       </section>
 
-      {/* Feature Image */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <div className="relative h-[50vh] lg:h-[60vh] w-full rounded-3xl overflow-hidden">
-              <Image
-                src={article.image}
-                alt={article.title}
-                fill
-                className="object-cover"
-                sizes="100vw"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Article Content */}
       <section className="pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="section-container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <div className="prose prose-lg max-w-none">
               {article.content.map((paragraph, index) => (

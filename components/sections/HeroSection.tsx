@@ -80,8 +80,8 @@ export default function HeroSection() {
                 Vi bygger din digitala framgång
               </h1>
               <p className="hero-subtitle text-gray-300">
-                Vi har hjälpt några av Sveriges mest framgångsrika entreprenörer
-                att växa. <br />
+                En digitalbyrå som har hjälpt några av Sveriges mest
+                framgångsrika entreprenörer att växa. <br />
                 Gör det du med.
               </p>
             </div>

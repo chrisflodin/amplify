@@ -67,28 +67,28 @@ export default function Footer() {
           <div className="space-y-4">
             <nav className="flex flex-col space-y-2">
               <Link
-                href="#uppdrag"
+                href="/uppdrag"
                 className="text-sm text-gray-400 hover:text-white transition-colors"
               >
                 Uppdrag
               </Link>
               <Link
-                href="#om-oss"
+                href="/om-oss"
                 className="text-sm text-gray-400 hover:text-white transition-colors"
               >
                 Om oss
               </Link>
               <Link
-                href="#lediga-jobb"
+                href="/lediga-jobb"
                 className="text-sm text-gray-400 hover:text-white transition-colors"
               >
                 Lediga jobb
               </Link>
               <Link
-                href="#nyheter"
+                href="/artiklar"
                 className="text-sm text-gray-400 hover:text-white transition-colors"
               >
-                Nyheter
+                Artiklar
               </Link>
               <Link
                 href="#kontakt"

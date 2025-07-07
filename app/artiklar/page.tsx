@@ -9,13 +9,13 @@ export default function ArticlesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-gray-50 pt-20 pb-16">
+      <div className="bg-brand-black pt-20 pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl lg:text-6xl font-inter font-bold text-brand-black mb-6">
+            <h1 className="text-4xl lg:text-6xl font-inter font-bold text-white mb-6">
               Artiklar
             </h1>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg text-gray-200 leading-relaxed">
               Här hittar du våra senaste insights om digital utveckling, design
               och teknik. Upptäck trender, tips och djupdykningar som hjälper
               dig att förbättra din digitala närvaro.

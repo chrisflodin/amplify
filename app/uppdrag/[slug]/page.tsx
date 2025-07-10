@@ -1,5 +1,3 @@
-"use client";
-
 import { ContactSection } from "@/components/sections";
 import { getProjectBySlug, getRelatedProjects } from "@/lib/projects";
 import Image from "next/image";

@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { getAllProjects } from "@/lib/projects";
 import Image from "next/image";

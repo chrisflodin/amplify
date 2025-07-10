@@ -1,7 +1,4 @@
-"use client";
-
 import {
-  ArticlesSection,
   ContactSection,
   HeroSection,
   ServicesSection,
@@ -16,7 +13,7 @@ export default function Home() {
       {/* <ClientShowcaseSection /> */}
       <ServicesSection />
       {/* <KPIMonitoringSection /> */}
-      <ArticlesSection />
+      {/* <ArticleSection /> */}
       <ContactSection />
     </main>
   );

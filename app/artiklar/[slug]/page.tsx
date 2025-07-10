@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { getArticleBySlug, getRelatedArticles } from "@/lib/articles";
+import { SanityService } from "@/services/sanity";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -13,13 +13,13 @@ interface ArticlePageProps {
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = await SanityService.getArticleBySlug(slug);
 
   if (!article) {
     notFound();
   }
 
-  const relatedArticles = getRelatedArticles(slug, 2);
+  const relatedArticles = await SanityService.getRelatedArticles(slug, 2);
 
   return (
     <main className="bg-white min-h-screen">
@@ -51,7 +51,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
             {/* Subtitle */}
             <p className="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed max-w-3xl">
-              {article.excerpt}
+              {article.subtitle}
             </p>
 
             {/* Article Meta */}
@@ -60,7 +60,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
                   <span className="text-brand-black font-semibold">
                     {article.author
-                      .split(" ")
+                      ?.split(" ")
                       .map((n) => n[0])
                       .join("")}
                   </span>
@@ -86,13 +86,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                       d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                     />
                   </svg>
-                  <span>
-                    {new Date(article.date).toLocaleDateString("sv-SE", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </span>
+                  <span>{SanityService.formatDate(article.date)}</span>
                 </div>
 
                 <div className="flex items-center space-x-1">
@@ -109,9 +103,28 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                       d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <span>{article.readTime}</span>
+                  <span>5 min</span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature Image */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="relative h-[50vh] lg:h-[60vh] w-full rounded-3xl overflow-hidden">
+              <Image
+                src={SanityService.getImageUrl(article.image, 1200, 800)}
+                alt={article.title || "Article image"}
+                fill
+                className="object-cover"
+                sizes="100vw"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
           </div>
         </div>
@@ -122,14 +135,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         <div className="section-container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <div className="prose prose-lg max-w-none">
-              {article.content.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="text-gray-700 leading-relaxed mb-6 text-lg"
-                >
-                  {paragraph}
-                </p>
-              ))}
+              <p className="text-gray-700 leading-relaxed mb-6 text-lg">
+                {article.subtitle}
+              </p>
+              {/* Add more content sections here when you have rich text content */}
             </div>
           </div>
         </div>
@@ -150,13 +159,20 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {relatedArticles.map((relatedArticle, index) => (
-                <Link href={`/artiklar/${relatedArticle.slug}`} key={index}>
+                <Link
+                  href={`/artiklar/${relatedArticle.slug?.current}`}
+                  key={index}
+                >
                   <article className="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 h-full flex flex-col">
                     {/* Article Image */}
                     <div className="aspect-[16/9] relative overflow-hidden">
                       <Image
-                        src={relatedArticle.image}
-                        alt={relatedArticle.title}
+                        src={SanityService.getImageUrl(
+                          relatedArticle.image,
+                          600,
+                          400
+                        )}
+                        alt={relatedArticle.title || "Related article image"}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                         sizes="(max-width: 768px) 100vw, 50vw"
@@ -180,7 +196,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
                       {/* Excerpt */}
                       <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 flex-1">
-                        {relatedArticle.excerpt}
+                        {relatedArticle.subtitle}
                       </p>
 
                       {/* Meta Information */}
@@ -189,7 +205,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                           <div className="w-8 h-8 bg-brand-black rounded-full flex items-center justify-center">
                             <span className="text-white text-xs font-semibold">
                               {relatedArticle.author
-                                .split(" ")
+                                ?.split(" ")
                                 .map((n) => n[0])
                                 .join("")}
                             </span>
@@ -199,14 +215,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                               {relatedArticle.author}
                             </p>
                             <p className="text-xs text-gray-500">
-                              {new Date(relatedArticle.date).toLocaleDateString(
-                                "sv-SE",
-                                {
-                                  year: "numeric",
-                                  month: "long",
-                                  day: "numeric",
-                                }
-                              )}
+                              {SanityService.formatDate(relatedArticle.date)}
                             </p>
                           </div>
                         </div>
@@ -225,9 +234,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                               d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                             />
                           </svg>
-                          <span className="text-sm">
-                            {relatedArticle.readTime}
-                          </span>
+                          <span className="text-sm">5 min</span>
                         </div>
                       </div>
                     </div>

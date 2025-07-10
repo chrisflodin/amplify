@@ -8,7 +8,7 @@ export default function Header() {
 
   const navItems = [
     { name: "Uppdrag", href: "/uppdrag", type: "page" },
-    { name: "Artiklar", href: "/artiklar", type: "anchor" },
+    // { name: "Artiklar", href: "/artiklar", type: "anchor" },
     { name: "Kontakt", href: "#kontakt", type: "anchor" },
     { name: "Lediga jobb", href: "/lediga-jobb", type: "anchor" },
     { name: "Om oss", href: "/om-oss", type: "anchor" },

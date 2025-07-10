@@ -81,8 +81,8 @@ export default function HeroSection() {
               </h1>
               <p className="hero-subtitle text-gray-300">
                 En digitalbyrå som har hjälpt några av Sveriges mest
-                framgångsrika entreprenörer att växa. <br />
-                Gör det du med.
+                framgångsrika entreprenörer med deras hemsidor och
+                marknadsföring. <br />
               </p>
             </div>
 

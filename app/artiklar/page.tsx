@@ -1,10 +1,10 @@
 import { Badge } from "@/components/ui/badge";
-import { getAllArticles } from "@/lib/articles";
+import { SanityService } from "@/services/sanity";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ArticlesPage() {
-  const articles = getAllArticles();
+export default async function ArticlesPage() {
+  const articles = await SanityService.getAllArticles();
 
   return (
     <div className="min-h-screen bg-white">
@@ -29,13 +29,13 @@ export default function ArticlesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article, index) => (
-              <Link href={`/artiklar/${article.slug}`} key={index}>
+              <Link href={`/artiklar/${article.slug?.current}`} key={index}>
                 <article className="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 h-full flex flex-col">
                   {/* Article Image */}
                   <div className="aspect-[16/9] relative overflow-hidden">
                     <Image
-                      src={article.image}
-                      alt={article.title}
+                      src={SanityService.getImageUrl(article.image, 600, 400)}
+                      alt={article.title || "Article image"}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -59,7 +59,7 @@ export default function ArticlesPage() {
 
                     {/* Excerpt */}
                     <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 flex-1">
-                      {article.excerpt}
+                      {article.subtitle}
                     </p>
 
                     {/* Meta Information */}
@@ -68,7 +68,7 @@ export default function ArticlesPage() {
                         <div className="w-8 h-8 bg-brand-black rounded-full flex items-center justify-center">
                           <span className="text-white text-xs font-semibold">
                             {article.author
-                              .split(" ")
+                              ?.split(" ")
                               .map((n) => n[0])
                               .join("")}
                           </span>
@@ -78,14 +78,7 @@ export default function ArticlesPage() {
                             {article.author}
                           </p>
                           <p className="text-xs text-gray-500">
-                            {new Date(article.date).toLocaleDateString(
-                              "sv-SE",
-                              {
-                                year: "numeric",
-                                month: "long",
-                                day: "numeric",
-                              }
-                            )}
+                            {SanityService.formatDate(article.date)}
                           </p>
                         </div>
                       </div>
@@ -104,7 +97,7 @@ export default function ArticlesPage() {
                             d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                           />
                         </svg>
-                        <span className="text-sm">{article.readTime}</span>
+                        <span className="text-sm">5 min</span>
                       </div>
                     </div>
                   </div>

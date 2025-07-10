@@ -84,12 +84,12 @@ export default function Footer() {
               >
                 Lediga jobb
               </Link>
-              <Link
+              {/* <Link
                 href="/artiklar"
                 className="text-sm text-gray-400 hover:text-white transition-colors"
               >
                 Artiklar
-              </Link>
+              </Link> */}
               <Link
                 href="#kontakt"
                 className="text-sm text-gray-400 hover:text-white transition-colors"

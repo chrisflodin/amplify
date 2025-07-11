@@ -1,28 +1,12 @@
 ---
-id: "1"
-title: "Stockholm Plastikkirurgi"
-subtitle: "Digital transformation för premiumpatienter"
+id: "3"
 category: "Marknadsföring"
+title: "Stockholm Plastikkirurgi"
+heroDescription: "En omfattande digital transformation som resulterade i 300% ökning av online-bokningar och förbättrad patientupplevelse genom modern webbdesign och automatiserade processer."
+image: "/images/stockholm-plastikkirurgi.png"
+subtitle: "Digital transformation för premiumpatienter"
 year: "2024"
 duration: "4 månader"
-technologies: ["Next.js", "React", "Tailwind CSS", "Stripe", "CMS"]
-results: "+300% bokningar"
-image: "/images/hartwall.png"
-description: "En omfattande digital transformation som resulterade i 300% ökning av online-bokningar och förbättrad patientupplevelse."
-heroDescription: "En omfattande digital transformation som resulterade i 300% ökning av online-bokningar och förbättrad patientupplevelse genom modern webbdesign och automatiserade processer."
-keyMetrics:
-  - value: "+300%"
-    label: "Online-bokningar"
-    description: "Dramatisk ökning av bokningar genom förbättrat bokningsflöde"
-    color: "text-blue-400"
-  - value: "-60%"
-    label: "Supportärenden"
-    description: "Färre frågor tack vare tydligare information och navigation"
-    color: "text-green-400"
-  - value: "95%"
-    label: "Mobil-optimering"
-    description: "Perfekt mobile-upplevelse för alla enheter"
-    color: "text-purple-400"
 ---
 
 ## Bakgrund

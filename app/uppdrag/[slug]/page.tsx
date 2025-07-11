@@ -40,7 +40,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
             {/* Right Column - Description */}
             <div className="flex items-start">
-              <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed lg:mt-12">
+              <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed">
                 {project.heroDescription}
               </p>
             </div>

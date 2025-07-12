@@ -1,6 +1,23 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { z } from "zod";
+
+// Validation schema for the contact form
+const contactSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().min(1, "Phone number is required"),
+  message: z.string().min(1, "Message is required"),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 interface ContactSectionProps {
   title?: string;
@@ -11,12 +28,57 @@ export default function ContactSection({
   title = "Kontakta oss",
   subtitle = "Boka ett möte eller skicka oss ett meddelande så återkommer vi snarast",
 }: ContactSectionProps) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        toast.success("Meddelande skickat!", {
+          description: "Vi återkommer till dig inom kort.",
+        });
+        reset();
+      } else {
+        const errorData = await response.json();
+        toast.error("Ett fel uppstod", {
+          description:
+            errorData.error || "Kunde inte skicka meddelandet. Försök igen.",
+        });
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast.error("Ett fel uppstod", {
+        description: "Kunde inte skicka meddelandet. Försök igen.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="kontakt" className="py-20 bg-brand-black text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">{title}</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">{subtitle}</p>
+          <p className="text-xl text-gray-300 max-w-md mx-auto">{subtitle}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -94,41 +156,69 @@ export default function ContactSection({
               </p>
             </div>
 
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>
                 <input
+                  {...register("name")}
                   type="text"
                   placeholder="Namn"
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
                 />
+                {errors.name && (
+                  <p className="text-red-400 text-sm mt-1">
+                    {errors.name.message}
+                  </p>
+                )}
               </div>
 
               <div>
                 <input
+                  {...register("email")}
                   type="email"
                   placeholder="E-post"
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
                 />
+                {errors.email && (
+                  <p className="text-red-400 text-sm mt-1">
+                    {errors.email.message}
+                  </p>
+                )}
               </div>
 
               <div>
                 <input
+                  {...register("phone")}
                   type="tel"
                   placeholder="Telefonnummer"
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
                 />
+                {errors.phone && (
+                  <p className="text-red-400 text-sm mt-1">
+                    {errors.phone.message}
+                  </p>
+                )}
               </div>
 
               <div>
                 <textarea
+                  {...register("message")}
                   placeholder="Skriv ditt meddelande här"
                   rows={6}
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors resize-none"
-                ></textarea>
+                />
+                {errors.message && (
+                  <p className="text-red-400 text-sm mt-1">
+                    {errors.message.message}
+                  </p>
+                )}
               </div>
 
-              <Button className="w-full bg-white text-brand-black hover:bg-gray-100 py-3 font-semibold">
-                Skicka meddelande
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-white text-brand-black hover:bg-gray-100 py-3 font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? "Skickar..." : "Skicka meddelande"}
               </Button>
             </form>
           </div>

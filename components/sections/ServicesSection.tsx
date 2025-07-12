@@ -12,9 +12,8 @@ export default function ServicesSection() {
             kunder att nå sina mål
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Digitala gränssnitt behöver inte vara fula, komplicerade eller
-            krascha. Vi designar och utvecklar projekt med slutanvändaren i
-            åtanke.
+            Hemsidor ska inte glömmas bort. Vi bygger hemsidor som syns,
+            konverterar och stärker varumärket – från design till SEO.
           </p>
         </div>
 

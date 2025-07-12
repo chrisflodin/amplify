@@ -1,5 +1,6 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
 import { inter, source_Sans_3 } from "./fonts";
 import "./globals.css";
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
   );

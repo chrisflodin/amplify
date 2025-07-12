@@ -16,10 +16,9 @@ export default function UppdragPage() {
               <h1 className="text-5xl lg:text-7xl font-inter font-bold leading-tight">
                 Utvalda uppdrag
               </h1>
-              <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
-                Se hur vi har hjälpt företag att transformera sina digitala
-                upplevelser och uppnå exceptionella resultat genom innovativ
-                design och utveckling.
+              <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+                Se hur vi har hjälpt företag att växa med fler kunder genom
+                strategi, design och digital marknadsföring.
               </p>
             </div>
           </div>
@@ -37,7 +36,7 @@ export default function UppdragPage() {
                   <div className="relative h-[40vh] overflow-hidden">
                     <Image
                       src={project.image}
-                      alt={project.title}
+                      alt={project.shortTitle}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -52,7 +51,7 @@ export default function UppdragPage() {
                           {project.category}
                         </span>
                         <h3 className="text-2xl font-bold text-white">
-                          {project.title}
+                          {project.shortTitle}
                         </h3>
                         <div className="w-16 h-1.5 bg-white/30 rounded-full group-hover:w-24 group-hover:bg-white/50 transition-all duration-300"></div>
                       </div>
@@ -65,7 +64,7 @@ export default function UppdragPage() {
         </div>
       </section>
       <ContactSection
-        title="Är ditt uppdrag på tur?
+        title="Vill ni också växa?
 "
       />
     </main>

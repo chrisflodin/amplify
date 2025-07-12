@@ -1,8 +1,8 @@
 export interface Project {
   id: string;
   slug: string;
-  title: string;
-  subtitle: string;
+  shortTitle: string;
+  longTitle: string;
   category: string;
   year: string;
   duration: string;

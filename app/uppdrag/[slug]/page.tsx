@@ -27,20 +27,20 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Left Column - Category and Title */}
-            <div className="space-y-8">
+            <div className="space-y-8 lg:col-span-1">
               <div className="space-y-2">
-                <h2 className="text-3xl lg:text-5xl font-inter font-bold text-gray-300 uppercase tracking-wider">
+                <h2 className="text-3xl lg:text-3xl font-inter font-bold text-gray-300 uppercase tracking-wider">
                   {project.category}
                 </h2>
-                <h1 className="text-5xl lg:text-6xl font-inter font-bold leading-tight">
-                  {project.title}
+                <h1 className="text-5xl lg:text-7xl font-inter font-medium ">
+                  {project.longTitle}
                 </h1>
               </div>
             </div>
 
             {/* Right Column - Description */}
-            <div className="flex items-start">
-              <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed">
+            <div className="flex items-start lg:col-span-1">
+              <p className="text-xl lg:text-2xl text-white leading-relaxed max-w-xl">
                 {project.heroDescription}
               </p>
             </div>
@@ -54,7 +54,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div className="relative h-[70vh] w-full rounded-3xl overflow-hidden">
             <Image
               src={project.image}
-              alt={project.title}
+              alt={project.shortTitle}
               fill
               className="object-cover"
               sizes="100vw"
@@ -149,7 +149,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   <div className="relative h-[60vh] overflow-hidden">
                     <Image
                       src={relatedProject.image}
-                      alt={relatedProject.title}
+                      alt={relatedProject.shortTitle}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -163,7 +163,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                           {relatedProject.category}
                         </span>
                         <h3 className="text-2xl font-bold text-white">
-                          {relatedProject.title}
+                          {relatedProject.shortTitle}
                         </h3>
                         <div className="w-16 h-1.5 bg-white/30 rounded-full group-hover:w-24 group-hover:bg-white/50 transition-all duration-300"></div>
                       </div>

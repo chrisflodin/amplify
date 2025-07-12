@@ -1,28 +1,22 @@
 ---
 id: "3"
 category: "Marknadsföring"
-title: "Stockholm Plastikkirurgi"
-heroDescription: "En omfattande digital transformation som resulterade i 300% ökning av online-bokningar och förbättrad patientupplevelse genom modern webbdesign och automatiserade processer."
+longTitle: "Stockholm Plastikkirurgi växer med digital strategi"
+shortTitle: "Stockholm Plastikkirurgi"
+heroDescription: "Ny identitet, ny webb och en tydlig innehållsstrategi – vi hjälpte Stockholm Plastikkirurgi att nå ut bredare genom en modern varumärkesprofil, en konverteringsfokuserad hemsida, innehåll för sociala medier och riktade kampanjer. Resultatet: bättre synlighet, ökad trafik och fler kunder."
 image: "/images/stockholm-plastikkirurgi.png"
-subtitle: "Digital transformation för premiumpatienter"
 year: "2024"
-duration: "4 månader"
+duration: "3 månader"
 ---
 
 ## Bakgrund
 
-Stockholm Plastikkirurgi hade en föråldrad webbplats som inte speglade deras premiumvarumärke. Patienter hade svårt att hitta information och boka konsultationer online.
+När vi först kom i kontakt med Stockholm Plastikkirurgi såg vi stor potential i att modernisera deras visuella uttryck och stärka deras digitala närvaro. Vi rekommenderade ett helhetsgrepp: en ny visuell identitet, en ny hemsida, samt en innehållsdriven strategi för att öka både räckvidd och förtroende – utan att kompromissa med den professionella känsla som är central för klinikens erbjudande.
 
-Den gamla plattformen genererade många supportärenden och missade potentiella kunder på grund av en komplicerad bokningsprocess och dålig mobile-upplevelse.
+## Vår roll
 
-## Vår Roll
-
-Vi genomförde en komplett digital transformation med fokus på användarupplevelse och konverteringsoptimering. En modern, responsiv webbplats byggdes med integrerat bokningssystem.
-
-Projektet inkluderade även SEO-optimering, innehållsstrategi och integration med befintliga system för smidig patienthantering.
+Vi tog fram en ny varumärkesprofil med en mjukare, mer modern känsla och designade en ny hemsida som presenterar tjänsterna på ett tillgängligt och förtroendeingivande sätt. Samtidigt utvecklades en innehållsstrategi med fokus på SEO och förtroendeskapande innehåll – bland annat videomaterial för sociala medier. För att driva relevant trafik genomförde vi även riktade Google Ads-kampanjer.
 
 ## Resultat
 
-Med den nya digitala lösningen ökade online-bokningarna med över 300%. Samtidigt minskade supportärendena med 60% tack vare förbättrad informationsarkitektur.
-
-Webbplatsen fick en modern design som speglar klinikens premiumpositionering och förbättrade patienternas första intryck avsevärt.
+På bara tre månader fick Stockholm Plastikkirurgi en helt ny digital närvaro – från logotyp till sajt, innehåll och annonsering. Kombinationen av ny identitet, SEO-optimerat innehåll och en snabb, tydlig webbplats har lett till ökad synlighet, bättre engagemang och fler bokningar. Tillsammans skapade vi en helhet som både stärker varumärket och konverterar bättre.

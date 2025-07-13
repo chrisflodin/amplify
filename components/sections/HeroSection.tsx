@@ -10,38 +10,28 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import type { Project } from "@/types/project";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  projects: Project[];
+}
+
+export default function HeroSection({ projects }: HeroSectionProps) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  const cards = [
-    {
-      company: "Stockholm Plastikkirurgi",
-      title: "Marknadsföring",
-      slug: "stockholm-plastikkirurgi",
-    },
-    {
-      company: "Hartwall",
-      title: "App Development",
-      slug: "hartwall-app",
-    },
-    {
-      company: "CRDBAG",
-      title: "E-commerce",
-      slug: "crdbag-ecommerce",
-    },
-    {
-      company: "SE ALLA UPPDRAG",
-      title: "Alla Uppdrag",
-      slug: "uppdrag",
-    },
-  ];
+  // Map projects to cards format
+  const cards = projects.map((project) => ({
+    company: project.shortTitle,
+    title: project.category,
+    slug: project.slug,
+    image: project.image,
+  }));
 
   useEffect(() => {
     if (!api) {
@@ -134,7 +124,7 @@ export default function HeroSection() {
                   loop: true,
                   skipSnaps: false,
                   dragFree: false,
-                  startIndex: 1,
+                  startIndex: 0,
                 }}
                 className={`w-full h-full transition-opacity duration-300 ${
                   api ? "opacity-100" : "opacity-0"
@@ -144,18 +134,12 @@ export default function HeroSection() {
                   {cards.map((card, index) => (
                     <CarouselItem key={index} className="pt-2 basis-1/2">
                       <div className="p-1">
-                        <Link
-                          href={
-                            card.slug === "uppdrag"
-                              ? "/uppdrag"
-                              : `/uppdrag/${card.slug}`
-                          }
-                        >
+                        <Link href={`/uppdrag/${card.slug}`}>
                           <Card className="group relative overflow-hidden rounded-3xl border border-white/10 text-white hover:scale-[1.01] transition-all duration-500 hover:shadow-2xl h-60 cursor-pointer">
                             {/* Background Image */}
                             <div className="absolute inset-0">
                               <Image
-                                src="/images/hartwall.png"
+                                src={card.image}
                                 alt={card.title}
                                 fill
                                 className="object-cover"

@@ -1,32 +1,32 @@
 export default function TestimonialsSection() {
   const testimonials = [
     {
-      quote: "ToGo-appen utvecklades på rekordtid av amplify",
-      author: "Alexander Lewerentz",
-      role: "Develop Manager",
-      company: "ICA",
+      quote: "CRDBAG-appen utvecklades på rekordtid av amplify",
+      author: "Mattias Näslund",
+      role: "Co-founder",
+      company: "CRDBAG",
       bgColor: "from-orange-100 to-orange-200",
       avatar: "bg-gray-300",
-      initials: null,
+      initials: "MT",
     },
     {
       quote:
         "Vi har haft ett jättebra samarbete med amplify. Jag rekommenderar dem varmt!",
-      author: "Anton Aderum",
-      role: "CTO",
-      company: "Bokadirekt",
+      author: "Martin Brolin",
+      role: "Utvecklare",
+      company: "Futurice",
       bgColor: "from-teal-100 to-teal-200",
       avatar: "bg-teal-500",
-      initials: "B",
+      initials: "M",
     },
     {
       quote: "Att välja amplify var ett enkelt val som jag inte ångrat!",
-      author: "Hacina Reienskiöld",
-      role: "IT Project Manager",
-      company: "Barncancerfonden",
+      author: "Marie Forseni",
+      role: "VD",
+      company: "Stockholm Plastikkirurgi",
       bgColor: "from-purple-100 to-purple-200",
       avatar: "bg-purple-500",
-      initials: "BCF",
+      initials: "MF",
     },
   ];
 

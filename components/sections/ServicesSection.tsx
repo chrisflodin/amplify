@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ServicesSection() {
   return (
@@ -12,15 +13,18 @@ export default function ServicesSection() {
             kunder att nå sina mål
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Hemsidor ska inte glömmas bort. Vi bygger hemsidor som syns,
-            konverterar och stärker varumärket – från design till SEO.
+            Vi kombinerar design, teknik och strategi för att skapa digitala
+            gränssnitt som driver verkliga resultat. Alltid med affärsnyttan i
+            fokus.
           </p>
         </div>
 
         <div className="mb-12 text-center">
-          <Button className="bg-brand-black text-white hover:bg-gray-800 px-8 py-4 text-lg font-semibold">
-            Se alla uppdrag
-          </Button>
+          <Link href={"/uppdrag"}>
+            <Button className="bg-brand-black text-white hover:bg-gray-800 px-8 py-4 text-lg font-semibold">
+              Se alla uppdrag
+            </Button>
+          </Link>
         </div>
 
         <div className="relative rounded-3xl overflow-hidden bg-white shadow-2xl">

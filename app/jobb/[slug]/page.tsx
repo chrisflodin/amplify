@@ -5,7 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/components/ui/use-toast";
 import { getJobBySlug } from "@/lib/jobs";
 import { Job } from "@/types/job";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { use, useState } from "react";
 
@@ -176,22 +175,10 @@ export default function JobDetailPage({ params }: JobPageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50 ">
       {/* Header */}
-      <section className="bg-white border-b">
+      <section className="bg-brand-black border-b">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex items-center space-x-2 text-sm text-gray-600 mb-6">
-            <Link href="/" className="hover:text-brand-black">
-              Hem
-            </Link>
-            <span>/</span>
-            <Link href="/jobb" className="hover:text-brand-black">
-              Lediga Jobb
-            </Link>
-            <span>/</span>
-            <span className="text-brand-black">{job.title}</span>
-          </div>
-
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div className="flex-1">
               <h1 className="text-4xl font-inter font-bold text-brand-black mb-4">

@@ -24,6 +24,7 @@ export default function HeroSection({ projects }: HeroSectionProps) {
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
 
   // Map projects to cards format
   const cards = projects.map((project) => ({
@@ -32,6 +33,15 @@ export default function HeroSection({ projects }: HeroSectionProps) {
     slug: project.slug,
     image: project.image,
   }));
+
+  // Track if all images are loaded
+  const allImagesLoaded = loadedImages.size === cards.length;
+  const isCarouselReady = api && allImagesLoaded;
+
+  // Handle individual image load
+  const handleImageLoad = (imageSrc: string) => {
+    setLoadedImages((prev) => new Set([...prev, imageSrc]));
+  };
 
   useEffect(() => {
     if (!api) {
@@ -48,7 +58,7 @@ export default function HeroSection({ projects }: HeroSectionProps) {
 
   // Auto-scroll functionality - pause when hovered
   useEffect(() => {
-    if (!api || isHovered) {
+    if (!api || isHovered || !allImagesLoaded) {
       return;
     }
 
@@ -57,7 +67,7 @@ export default function HeroSection({ projects }: HeroSectionProps) {
     }, 5000);
 
     return () => clearInterval(autoScroll);
-  }, [api, isHovered]);
+  }, [api, isHovered, allImagesLoaded]);
 
   return (
     <section className="bg-brand-black text-white min-h-screen flex items-center pt-16">
@@ -101,7 +111,7 @@ export default function HeroSection({ projects }: HeroSectionProps) {
             {/* Carousel Container */}
             <div className="flex-1 h-full relative">
               {/* Loading placeholder */}
-              {!api && (
+              {!isCarouselReady && (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Card className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 text-white h-60 w-full max-w-md animate-pulse">
                     <CardContent className="p-6">
@@ -124,10 +134,9 @@ export default function HeroSection({ projects }: HeroSectionProps) {
                   loop: true,
                   skipSnaps: false,
                   dragFree: false,
-                  startIndex: 0,
                 }}
                 className={`w-full h-full transition-opacity duration-300 ${
-                  api ? "opacity-100" : "opacity-0"
+                  isCarouselReady ? "opacity-100" : "opacity-0"
                 }`}
               >
                 <CarouselContent className="h-[400px] -mt-2">
@@ -144,6 +153,8 @@ export default function HeroSection({ projects }: HeroSectionProps) {
                                 fill
                                 className="object-cover"
                                 sizes="(max-width: 768px) 100vw, 50vw"
+                                onLoad={() => handleImageLoad(card.image)}
+                                priority={index < 2} // Prioritize first two images
                               />
                             </div>
 
@@ -177,7 +188,7 @@ export default function HeroSection({ projects }: HeroSectionProps) {
             </div>
 
             {/* Navigation dots - Outside carousel */}
-            {api && (
+            {isCarouselReady && (
               <div className="flex flex-col items-center space-y-3 ml-6">
                 {cards.map((_, index) => (
                   <button

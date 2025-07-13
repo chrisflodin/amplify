@@ -27,16 +27,6 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       <section className="pt-32 pb-16 bg-brand-black">
         <div className="section-container">
           <div className="max-w-3xl mx-auto">
-            {/* Breadcrumb */}
-            <div className="mb-8">
-              <Link
-                href="/artiklar"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                ← Tillbaka till artiklar
-              </Link>
-            </div>
-
             {/* Category Badge */}
             <div className="mb-6">
               <Badge className="bg-white text-brand-black px-4 py-2 text-sm font-semibold">

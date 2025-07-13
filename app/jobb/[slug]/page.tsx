@@ -1,36 +1,36 @@
-import { Badge } from "@/components/ui/badge";
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { formatJobDate, getJobBySlug } from "@/lib/jobs";
+import { useToast } from "@/components/ui/use-toast";
+import { getJobBySlug } from "@/lib/jobs";
 import { Job } from "@/types/job";
-import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { use, useState } from "react";
 
 interface JobPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
-}
-
-export async function generateMetadata({
-  params,
-}: JobPageProps): Promise<Metadata> {
-  const job = getJobBySlug(params.slug);
-
-  if (!job) {
-    return {
-      title: "Jobb hittades inte - amplify",
-    };
-  }
-
-  return {
-    title: `${job.title} - Lediga Jobb - amplify`,
-    description: job.description.split("\n")[0],
-  };
+  }>;
 }
 
 function JobApplicationForm({ job }: { job: Job }) {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = () => {
+    setIsSubmitting(true);
+
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast({
+        title: "Vi beklagar, denna tjänst har redan tillsatts",
+        variant: "destructive",
+      });
+    }, 500);
+  };
+
   return (
     <Card className="sticky top-8">
       <CardHeader>
@@ -133,21 +133,6 @@ function JobApplicationForm({ job }: { job: Job }) {
 
           <div>
             <label
-              htmlFor="coverLetter"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Personligt brev
-            </label>
-            <textarea
-              id="coverLetter"
-              rows={6}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-black focus:border-transparent resize-none"
-              placeholder="Berätta varför du är rätt person för denna tjänst..."
-            />
-          </div>
-
-          <div>
-            <label
               htmlFor="resume"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
@@ -165,8 +150,12 @@ function JobApplicationForm({ job }: { job: Job }) {
           </div>
         </div>
 
-        <Button className="w-full bg-brand-black text-white hover:bg-gray-800 py-3 font-semibold">
-          Skicka ansökan
+        <Button
+          onClick={handleSubmit}
+          disabled={isSubmitting}
+          className="w-full bg-brand-black text-white hover:bg-gray-800 py-3 font-semibold disabled:opacity-50"
+        >
+          {isSubmitting ? "Skickar..." : "Skicka ansökan"}
         </Button>
 
         <p className="text-xs text-gray-500 text-center">
@@ -179,7 +168,8 @@ function JobApplicationForm({ job }: { job: Job }) {
 }
 
 export default function JobDetailPage({ params }: JobPageProps) {
-  const job = getJobBySlug(params.slug);
+  const resolvedParams = use(params);
+  const job = getJobBySlug(resolvedParams.slug);
 
   if (!job) {
     notFound();
@@ -219,22 +209,6 @@ export default function JobDetailPage({ params }: JobPageProps) {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                    />
-                  </svg>
-                  <span>{job.department}</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
                       d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                     />
                     <path
@@ -246,50 +220,7 @@ export default function JobDetailPage({ params }: JobPageProps) {
                   </svg>
                   <span>{job.location}</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  <span>{job.type}</span>
-                </div>
-                {job.salary && (
-                  <div className="flex items-center space-x-2">
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
-                      />
-                    </svg>
-                    <span>{job.salary}</span>
-                  </div>
-                )}
               </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Badge variant="secondary" className="px-4 py-2 text-sm">
-                {job.level}
-              </Badge>
-              <Badge variant="outline" className="px-4 py-2 text-sm">
-                {job.type}
-              </Badge>
             </div>
           </div>
         </div>
@@ -380,26 +311,6 @@ export default function JobDetailPage({ params }: JobPageProps) {
                         <span className="text-gray-700">{benefit}</span>
                       </div>
                     ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Application Info */}
-              <Card className="bg-gray-50">
-                <CardContent className="pt-6">
-                  <div className="flex items-center justify-between text-sm text-gray-600">
-                    <div>
-                      <p>Publicerad: {formatJobDate(job.publishedAt)}</p>
-                      {job.applicationDeadline && (
-                        <p className="text-red-600 font-medium">
-                          Ansök senast: {formatJobDate(job.applicationDeadline)}
-                        </p>
-                      )}
-                    </div>
-                    <div className="text-right">
-                      <p>Referensnummer: {job.id}</p>
-                      <p>Avdelning: {job.department}</p>
-                    </div>
                   </div>
                 </CardContent>
               </Card>

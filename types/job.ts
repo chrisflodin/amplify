@@ -1,14 +1,10 @@
 export interface Job {
   id: string;
   title: string;
-  department: string;
   location: string;
-  type: "Heltid" | "Deltid" | "Konsult" | "Praktik";
   description: string;
   requirements: string[];
   benefits: string[];
-  publishedAt: string;
-  applicationDeadline?: string;
   slug: string;
   isActive: boolean;
 }

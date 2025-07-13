@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { formatJobDate, getAllJobs } from "@/lib/jobs";
+import { getAllJobs } from "@/lib/jobs";
 import { Job } from "@/types/job";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -14,19 +14,13 @@ export const metadata: Metadata = {
 
 function JobCard({ job }: { job: Job }) {
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-white shadow-md hover:shadow-xl">
+    <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-white shadow-md">
       <CardContent className="p-6">
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">
             <h3 className="text-xl font-inter font-bold text-brand-black group-hover:text-gray-700 transition-colors">
               {job.title}
             </h3>
-            <p className="text-gray-600 mt-1">{job.department}</p>
-          </div>
-          <div className="flex flex-col items-end space-y-2">
-            <Badge variant="secondary" className="bg-gray-100 text-gray-800">
-              {job.type}
-            </Badge>
           </div>
         </div>
 
@@ -55,14 +49,6 @@ function JobCard({ job }: { job: Job }) {
               <span>{job.location}</span>
             </div>
           </div>
-          <div className="text-sm text-gray-500">
-            Publicerad: {formatJobDate(job.publishedAt)}
-            {job.applicationDeadline && (
-              <span className="ml-4">
-                Ansök senast: {formatJobDate(job.applicationDeadline)}
-              </span>
-            )}
-          </div>
         </div>
 
         <div className="mb-6">
@@ -84,11 +70,9 @@ function JobCard({ job }: { job: Job }) {
               </Badge>
             )}
           </div>
-          <Link href={`/jobb/${job.slug}`}>
-            <Button className="bg-brand-black text-white hover:bg-gray-800">
-              Läs mer
-            </Button>
-          </Link>
+          <Button className="bg-brand-black text-white hover:bg-gray-800">
+            Läs mer
+          </Button>
         </div>
       </CardContent>
     </Card>
@@ -97,8 +81,6 @@ function JobCard({ job }: { job: Job }) {
 
 export default function JobsPage() {
   const jobs = getAllJobs();
-  const departments = [...new Set(jobs.map((job) => job.department))];
-  const jobTypes = [...new Set(jobs.map((job) => job.type))];
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -157,33 +139,6 @@ export default function JobsPage() {
         </div>
       </section>
 
-      {/* Filter Section */}
-      <section className="py-12 bg-white border-b">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
-            <div className="flex flex-col sm:flex-row gap-4">
-              <div className="flex items-center space-x-2">
-                <span className="text-sm font-medium text-gray-700">Typ:</span>
-                <div className="flex gap-2">
-                  {jobTypes.map((type) => (
-                    <Badge
-                      key={type}
-                      variant="outline"
-                      className="cursor-pointer hover:bg-gray-100"
-                    >
-                      {type}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center space-x-2 text-sm text-gray-600">
-              <span>{jobs.length} ledig tjänst</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Jobs Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -218,7 +173,9 @@ export default function JobsPage() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {jobs.map((job) => (
-                <JobCard key={job.id} job={job} />
+                <Link key={job.id} href={`/jobb/${job.slug}`}>
+                  <JobCard job={job} />
+                </Link>
               ))}
             </div>
           )}

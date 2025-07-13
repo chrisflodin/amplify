@@ -1,6 +1,6 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/toaster";
 import type { Metadata } from "next";
 import { inter, source_Sans_3 } from "./fonts";
 import "./globals.css";

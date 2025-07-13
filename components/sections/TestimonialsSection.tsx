@@ -2,7 +2,7 @@ export default function TestimonialsSection() {
   const testimonials = [
     {
       quote: "CRDBAG-appen utvecklades på rekordtid av amplify",
-      author: "Mattias Näslund",
+      author: "Andreas Näslund",
       role: "Co-founder",
       company: "CRDBAG",
       bgColor: "from-orange-100 to-orange-200",

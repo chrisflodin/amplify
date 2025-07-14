@@ -29,9 +29,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             {/* Left Column - Category and Title */}
             <div className="space-y-8 lg:col-span-1">
               <div className="space-y-2">
-                <h2 className="text-3xl lg:text-3xl font-inter font-bold text-gray-300 uppercase tracking-wider">
+                <span className="text-3xl lg:text-3xl font-inter font-bold text-gray-300 uppercase tracking-wider">
                   {project.category}
-                </h2>
+                </span>
                 <h1 className="text-5xl lg:text-7xl font-inter font-medium ">
                   {project.longTitle}
                 </h1>
@@ -70,15 +70,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-2">
-              <h3 className="text-sm font-medium text-white/60 uppercase tracking-wider">
+              <h2 className="text-sm font-medium text-white/60 uppercase tracking-wider">
                 Uppdragstart
-              </h3>
+              </h2>
               <p className="text-4xl font-inter font-bold">{project.year}</p>
             </div>
             <div className="space-y-2">
-              <h3 className="text-sm font-medium text-white/60 uppercase tracking-wider">
+              <h2 className="text-sm font-medium text-white/60 uppercase tracking-wider">
                 Leveranstid
-              </h3>
+              </h2>
               <p className="text-4xl font-inter font-bold">
                 {project.duration}
               </p>

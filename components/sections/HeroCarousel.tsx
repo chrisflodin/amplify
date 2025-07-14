@@ -13,6 +13,7 @@ import type { Project } from "@/types/project";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import HeroCarouselSkeleton from "./HeroCarouselSkeleton";
 
 interface HeroCarouselProps {
   projects: Project[];
@@ -77,20 +78,7 @@ export default function HeroCarousel({ projects }: HeroCarouselProps) {
       {/* Carousel Container */}
       <div className="flex-1 h-full relative">
         {/* Loading placeholder */}
-        {!isCarouselReady && (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Card className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 text-white h-60 w-full max-w-md animate-pulse">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="h-4 bg-white/20 rounded w-32"></div>
-                  <div className="w-10 h-10 bg-white/10 rounded-3xl"></div>
-                </div>
-                <div className="h-8 bg-white/20 rounded mb-3 w-48"></div>
-                <div className="w-16 h-1.5 bg-white/20 rounded-full"></div>
-              </CardContent>
-            </Card>
-          </div>
-        )}
+        {!isCarouselReady && <HeroCarouselSkeleton />}
 
         <Carousel
           setApi={setApi}

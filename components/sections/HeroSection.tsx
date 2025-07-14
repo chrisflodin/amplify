@@ -1,8 +1,6 @@
 import type { Project } from "@/types/project";
-import { Suspense } from "react";
 import ContactButton from "./ContactButton";
 import HeroCarousel from "./HeroCarousel";
-import HeroCarouselSkeleton from "./HeroCarouselSkeleton";
 
 interface HeroSectionProps {
   projects: Project[];
@@ -32,9 +30,7 @@ export default function HeroSection({ projects }: HeroSectionProps) {
           </div>
 
           {/* Right Column - Carousel with Suspense for partial pre-rendering */}
-          <Suspense fallback={<HeroCarouselSkeleton />}>
-            <HeroCarousel projects={projects} />
-          </Suspense>
+          <HeroCarousel projects={projects} />
         </div>
       </div>
     </section>

@@ -1,4 +1,34 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 export default function TestimonialsSection() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   const testimonials = [
     {
       quote: "CRDBAG-appen utvecklades på rekordtid av amplify",
@@ -31,13 +61,22 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section ref={sectionRef} className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className={`bg-gradient-to-br ${testimonial.bgColor} rounded-3xl p-8`}
+              className={`bg-gradient-to-br ${
+                testimonial.bgColor
+              } rounded-3xl p-8 transform transition-all duration-700 ease-out ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+              }`}
+              style={{
+                transitionDelay: isVisible ? `${index * 200}ms` : "0ms",
+              }}
             >
               <div className="space-y-6">
                 <div className="text-2xl font-bold text-brand-black">

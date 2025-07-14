@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function HeroCarouselSkeleton() {
   return (
-    <div className="relative h-[400px] w-full flex items-center mt-10">
+    <div className="relative h-[600px] w-full flex items-center mt-10">
       {/* Carousel Container */}
       <div className="flex-1 h-full relative">
         <div className="absolute inset-0 flex items-center justify-center">

@@ -101,8 +101,10 @@ export default function HeroCarousel({ projects }: HeroCarouselProps) {
             skipSnaps: false,
             dragFree: false,
           }}
-          className={`w-full h-full transition-opacity duration-300 ${
-            isCarouselReady ? "opacity-100" : "opacity-0"
+          className={`w-full h-full transition-all duration-700 ease-out ${
+            isCarouselReady
+              ? "opacity-100 translate-y-0 scale-100"
+              : "opacity-0 translate-y-4 scale-95"
           }`}
         >
           <CarouselContent className="h-[400px] -mt-2">
@@ -155,7 +157,7 @@ export default function HeroCarousel({ projects }: HeroCarouselProps) {
 
       {/* Navigation dots - Outside carousel */}
       {isCarouselReady && (
-        <div className="flex flex-col items-center space-y-3 ml-6">
+        <div className="flex flex-col items-center space-y-3 ml-6 animate-in fade-in-0 slide-in-from-right-2 duration-700">
           {cards.map((_, index) => (
             <button
               key={index}

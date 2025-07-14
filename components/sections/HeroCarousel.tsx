@@ -125,9 +125,9 @@ export default function HeroCarousel({ projects }: HeroCarouselProps) {
                             {card.title}
                           </span>
                         </div>
-                        <h3 className="text-2xl font-bold mb-3 text-white">
+                        <span className="text-2xl font-bold mb-3 text-white">
                           {card.company}
-                        </h3>
+                        </span>
                         <div className="w-16 h-1.5 bg-white/30 rounded-full group-hover:w-24 group-hover:bg-white/50 transition-all duration-300"></div>
                       </CardContent>
                     </Card>

@@ -6,6 +6,7 @@ export const services: Service[] = [
     slug: "branding",
     name: "Branding",
     title: "Branding",
+    subtitle: "Från strategi till visuell identitet",
     description: "Stärk ert varumärke med en tydlig identitet",
     shortDescription:
       "Vi hjälper er att bygga ett varumärke som sticker ut och skapar förtroende – från strategi till visuell identitet.",
@@ -23,6 +24,7 @@ export const services: Service[] = [
     slug: "ux-ui-design",
     name: "UX / UI design",
     title: "UX / UI design",
+    subtitle: "Från användarinsikt till interaktiv design",
     description: "Design som engagerar och konverterar",
     shortDescription:
       "Vi skapar användarupplevelser och gränssnitt som är både snygga och intuitiva – alltid med affärsmål och användare i fokus.",
@@ -40,6 +42,7 @@ export const services: Service[] = [
     slug: "webbutveckling",
     name: "Webbutveckling",
     title: "Webbutveckling",
+    subtitle: "Från hemsidor till REST-API",
     description:
       "Modern webbutveckling med React, Next.js och Sanity CMS för framtidens affärer",
     shortDescription:
@@ -58,6 +61,7 @@ export const services: Service[] = [
     slug: "apputveckling",
     name: "Apputveckling",
     title: "Apputveckling",
+    subtitle: "Från iOS till Android och cross-platform",
     description: "Mobilappar som engagerar användare",
     shortDescription:
       "Vi utvecklar intuitiva och funktionella mobilappar för iOS och Android som förbättrar användarupplevelsen.",
@@ -75,6 +79,7 @@ export const services: Service[] = [
     slug: "e-handel",
     name: "E-handel",
     title: "E-handel",
+    subtitle: "Från produktkatalog till fullständig e-handelsplattform",
     description: "E-handelslösningar som driver försäljning",
     shortDescription:
       "Vi bygger användarvänliga och konverterande e-handelsplattformar – från Next.js, Sanity CMS till skräddarsydda lösningar.",
@@ -92,6 +97,7 @@ export const services: Service[] = [
     slug: "seo",
     name: "SEO",
     title: "SEO",
+    subtitle: "Från teknisk optimering till innehållsstrategi",
     description: "Sökmotoroptimering för långsiktig synlighet",
     shortDescription:
       "Vi optimerar din webbplats för att du ska synas högre i sökresultaten och attrahera rätt besökare.",
@@ -109,6 +115,7 @@ export const services: Service[] = [
     slug: "web-design",
     name: "Web design",
     title: "Web design",
+    subtitle: "Från koncept till färdig design",
     description: "Visuell design som inspirerar",
     shortDescription:
       "Vi skapar visuellt tilltalande webbdesign som speglar ditt varumärke och engagerar dina besökare.",
@@ -126,6 +133,7 @@ export const services: Service[] = [
     slug: "content",
     name: "Content",
     title: "Content",
+    subtitle: "Från strategi till publicering",
     description: "Innehåll som engagerar och bygger varumärke",
     shortDescription:
       "Vi producerar strategiskt innehåll som stärker din digitala närvaro och driver resultat.",
@@ -143,6 +151,7 @@ export const services: Service[] = [
     slug: "growth",
     name: "Growth",
     title: "Growth",
+    subtitle: "Från analys till skalbar tillväxt",
     description: "Datadriven tillväxt och konverteringsoptimering",
     shortDescription:
       "Vi utvecklar och implementerar strategier som driver mätbar tillväxt och ökar din lönsamhet.",

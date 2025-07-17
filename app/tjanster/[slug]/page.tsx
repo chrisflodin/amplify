@@ -46,11 +46,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 {service.title}
               </h1>
               <div className="text-xl lg:text-2xl text-gray-300 leading-relaxed">
-                <p className="mb-8">{service.shortDescription}</p>
                 <div className="space-y-8">
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-4">
-                      Från hemsidor till REST-API
+                      {service.subtitle}
                     </h3>
                     <p className="text-gray-300">
                       {service.detailedDescription}
@@ -89,16 +88,16 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
       {/* Service Details Sections */}
       {sections.map((section, index) => (
-        <section key={index} className="py-16 bg-orange-600">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section key={index} className="py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl lg:text-4xl font-inter font-bold text-white mb-12">
+              <h2 className="text-3xl lg:text-4xl font-inter font-bold text-brand-black mb-12">
                 {section.title}
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <div>
-                  <p className="text-lg text-white leading-relaxed">
+                  <p className="text-lg text-brand-black leading-relaxed">
                     {section.description}
                   </p>
                 </div>
@@ -106,13 +105,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   <ul className="space-y-6">
                     {section.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start">
-                        <span className="text-white mr-3">✓</span>
+                        <span className="text-green-600 mr-3">✓</span>
                         <div>
-                          <h3 className="text-white font-semibold mb-1">
+                          <h3 className="text-brand-black font-semibold text-lg mb-1">
                             {feature.title}
                           </h3>
                           {feature.description && (
-                            <p className="text-white/90 text-sm">
+                            <p className="text-gray-600 text-md">
                               {feature.description}
                             </p>
                           )}

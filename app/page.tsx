@@ -1,6 +1,7 @@
 import {
   ContactSection,
   HeroSection,
+  ServicesGridSection,
   ServicesSection,
   TestimonialsSection,
 } from "@/components/sections";
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <main>
       <HeroSection projects={projects} />
+      <ServicesGridSection />
       <TestimonialsSection />
       {/* <ClientShowcaseSection /> */}
       <ServicesSection />

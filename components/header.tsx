@@ -7,6 +7,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
+    { name: "Tjänster", href: "/tjanster", type: "page" },
     { name: "Uppdrag", href: "/uppdrag", type: "page" },
     // { name: "Artiklar", href: "/artiklar", type: "anchor" },
     { name: "Kontakt", href: "#kontakt", type: "anchor" },

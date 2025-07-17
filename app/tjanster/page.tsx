@@ -33,24 +33,15 @@ export default function ServicesPage() {
                 className="group block"
               >
                 <div className="bg-transparent border border-white/10 rounded-2xl p-8 h-full transition-all duration-500 hover:border-white/30 hover:bg-white/5 hover:scale-[1.02]">
-                  {/* Service Icon/Initial */}
-                  <div className="mb-6">
-                    <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white/20 transition-all duration-300">
-                      <span className="text-white text-xl font-inter font-bold">
-                        {service.name.charAt(0)}
-                      </span>
-                    </div>
+                  {/* Service Title */}
+                  <h3 className="text-2xl font-inter font-bold text-white mb-4 group-hover:text-gray-100 transition-colors">
+                    {service.name}
+                  </h3>
 
-                    {/* Service Title */}
-                    <h3 className="text-2xl font-inter font-bold text-white mb-4 group-hover:text-gray-100 transition-colors">
-                      {service.name}
-                    </h3>
-
-                    {/* Service Description */}
-                    <p className="text-gray-400 mb-6 leading-relaxed">
-                      {service.shortDescription}
-                    </p>
-                  </div>
+                  {/* Service Description */}
+                  <p className="text-gray-400 mb-6 leading-relaxed">
+                    {service.shortDescription}
+                  </p>
 
                   {/* Key Features */}
                   <div className="mb-8">

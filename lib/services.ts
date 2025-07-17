@@ -51,7 +51,7 @@ export const services: Service[] = [
       "API-integrationer och säkerhet",
     ],
     detailedDescription:
-      "Från första kodraden till lanserad webbplats – vi tar ansvar för hela processen. Vi utvecklar tekniskt optimerade hemsidor, e-handel och applikationer i moderna ramverk som WordPress och Laravel, alltid anpassade efter era behov och mål.",
+      "Från första kodraden till lanserad webbplats – vi tar ansvar för hela processen. Vi utvecklar tekniskt optimerade hemsidor, e-handel och applikationer i moderna ramverk som React, Next.js och Sanity CMS, alltid anpassade efter era behov och mål.",
   },
   {
     id: "apputveckling",
@@ -77,7 +77,7 @@ export const services: Service[] = [
     title: "E-handel",
     description: "E-handelslösningar som driver försäljning",
     shortDescription:
-      "Vi bygger användarvänliga och konverterande e-handelsplattformar – från WooCommerce till skräddarsydda lösningar.",
+      "Vi bygger användarvänliga och konverterande e-handelsplattformar – från Next.js, Sanity CMS till skräddarsydda lösningar.",
     features: [
       "Next.js, Sanity CMS",
       "Skräddarsydd e-handel",
@@ -85,7 +85,7 @@ export const services: Service[] = [
       "Integrationer och automation",
     ],
     detailedDescription:
-      "Vi skapar e-handelslösningar som är optimerade för tillväxt och enkel administration. Oavsett om du behöver en flexibel WooCommerce-butik eller en helt skräddarsydd plattform, hjälper vi dig att sälja mer och växa digitalt.",
+      "Vi skapar e-handelslösningar som är optimerade för tillväxt och enkel administration. Oavsett om du behöver en flexibel Next.js-butik eller en helt skräddarsydd plattform, hjälper vi dig att sälja mer och växa digitalt.",
   },
   {
     id: "seo",
@@ -466,7 +466,7 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
           {
             title: "Next.js, React, Sanity CMS",
             description:
-              "Vi bygger flexibla och skalbara e-handelslösningar i WooCommerce och WordPress, anpassade efter dina behov.",
+              "Vi bygger flexibla och skalbara e-handelslösningar i Next.js och Sanity CMS, anpassade efter dina behov.",
           },
           {
             title: "Skräddarsydd e-handel",

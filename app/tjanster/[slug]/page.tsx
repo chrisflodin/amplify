@@ -38,44 +38,49 @@ export default async function ServicePage({ params }: ServicePageProps) {
             <span className="text-white">{service.name}</span>
           </nav>
 
-          {/* Service Title */}
-          <div className="mb-12">
-            <h1 className="text-5xl lg:text-7xl font-inter font-bold text-white mb-6">
-              {service.title}
-            </h1>
-            <div className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-3xl">
-              <p className="mb-8">{service.shortDescription}</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-4">
-                    Från hemsidor till REST-API
-                  </h3>
-                  <p className="text-gray-300">{service.detailedDescription}</p>
-                </div>
-                <div>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, index) => (
-                      <li key={index} className="flex items-start">
-                        <span className="text-green-400 mr-3">✓</span>
-                        <span className="text-gray-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+          {/* Service Title and Image */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+            {/* Left Column - Text Content */}
+            <div>
+              <h1 className="text-5xl lg:text-7xl font-inter font-bold text-white mb-6">
+                {service.title}
+              </h1>
+              <div className="text-xl lg:text-2xl text-gray-300 leading-relaxed">
+                <p className="mb-8">{service.shortDescription}</p>
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-4">
+                      Från hemsidor till REST-API
+                    </h3>
+                    <p className="text-gray-300">
+                      {service.detailedDescription}
+                    </p>
+                  </div>
+                  <div>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="text-green-400 mr-3">✓</span>
+                          <span className="text-gray-300">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Service Image Placeholder */}
-          <div className="relative rounded-3xl overflow-hidden bg-gray-800 h-96">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-white text-2xl font-bold">
-                    {service.name.charAt(0)}
-                  </span>
+            {/* Right Column - Service Image */}
+            <div className="relative rounded-3xl overflow-hidden bg-gray-800 h-96 lg:h-[500px]">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-24 h-24 bg-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span className="text-white text-2xl font-bold">
+                      {service.name.charAt(0)}
+                    </span>
+                  </div>
+                  <p className="text-gray-400">Service illustration</p>
                 </div>
-                <p className="text-gray-400">Service illustration</p>
               </div>
             </div>
           </div>

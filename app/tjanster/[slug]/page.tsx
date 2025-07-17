@@ -48,7 +48,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               <div className="text-xl lg:text-2xl text-gray-300 leading-relaxed">
                 <div className="space-y-8">
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-4">
+                    <h3 className="text-2xl font-semibold text-white mb-4">
                       {service.subtitle}
                     </h3>
                     <p className="text-gray-300">
@@ -87,44 +87,46 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* Service Details Sections */}
-      {sections.map((section, index) => (
-        <section key={index} className="py-16 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl lg:text-4xl font-inter font-bold text-brand-black mb-12">
-                {section.title}
-              </h2>
+      <section className="pt-20 bg-white">
+        {sections.map((section, index) => (
+          <div key={index} className="py-12 bg-white">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+              <div className="max-w-6xl mx-auto">
+                <h2 className="text-3xl lg:text-4xl font-inter font-bold text-brand-black mb-12">
+                  {section.title}
+                </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <div>
-                  <p className="text-lg text-brand-black leading-relaxed">
-                    {section.description}
-                  </p>
-                </div>
-                <div>
-                  <ul className="space-y-6">
-                    {section.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start">
-                        <span className="text-green-600 mr-3">✓</span>
-                        <div>
-                          <h3 className="text-brand-black font-semibold text-lg mb-1">
-                            {feature.title}
-                          </h3>
-                          {feature.description && (
-                            <p className="text-gray-600 text-md">
-                              {feature.description}
-                            </p>
-                          )}
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                  <div>
+                    <p className="text-lg text-brand-black leading-relaxed">
+                      {section.description}
+                    </p>
+                  </div>
+                  <div>
+                    <ul className="space-y-6">
+                      {section.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start">
+                          <span className="text-green-600 mr-3">✓</span>
+                          <div>
+                            <h3 className="text-brand-black font-semibold text-lg mb-1">
+                              {feature.title}
+                            </h3>
+                            {feature.description && (
+                              <p className="text-gray-600 text-md">
+                                {feature.description}
+                              </p>
+                            )}
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-      ))}
+        ))}
+      </section>
 
       {/* Contact Section */}
       <ContactSection />

@@ -40,13 +40,14 @@ export const services: Service[] = [
     slug: "webbutveckling",
     name: "Webbutveckling",
     title: "Webbutveckling",
-    description: "Modern webbutveckling för framtidens affärer",
+    description:
+      "Modern webbutveckling med React, Next.js och Sanity CMS för framtidens affärer",
     shortDescription:
       "Vi bygger snabba, säkra och skräddarsydda webbplatser och e-handelslösningar – alltid med fokus på prestanda och användarvänlighet.",
     features: [
-      "Frontend- och backendutveckling",
-      "WordPress & WooCommerce",
-      "Laravel & skräddarsydda lösningar",
+      "Frontend- och backendutveckling med React och Next.js",
+      "Sanity CMS",
+      "Skräddarsydda lösningar",
       "API-integrationer och säkerhet",
     ],
     detailedDescription:
@@ -78,7 +79,7 @@ export const services: Service[] = [
     shortDescription:
       "Vi bygger användarvänliga och konverterande e-handelsplattformar – från WooCommerce till skräddarsydda lösningar.",
     features: [
-      "WooCommerce & WordPress",
+      "Next.js, Sanity CMS",
       "Skräddarsydd e-handel",
       "Betalnings- och logistiklösningar",
       "Integrationer och automation",
@@ -240,14 +241,14 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
         title: "Plattformsutveckling",
         features: [
           {
-            title: "iOS och Android",
+            title: "iOS och Android med React Native",
             description:
-              "Vi utvecklar appar för både iOS och Android för att nå hela din målgrupp oavsett plattform.",
+              "Vi utvecklar appar för både iOS och Android med React Native för maximal räckvidd och effektivitet.",
           },
           {
-            title: "Cross-platform",
+            title: "Cross-platform med React Native",
             description:
-              "Vi använder moderna ramverk för att bygga appar som fungerar sömlöst på flera plattformar.",
+              "Vi använder React Native för att bygga appar som fungerar sömlöst på flera plattformar med en gemensam kodbas.",
           },
           {
             title: "Backend och API",
@@ -256,7 +257,7 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
           },
         ],
         description:
-          "Vi utvecklar appar som är anpassade för både iOS och Android, med fokus på prestanda, säkerhet och skalbarhet.",
+          "Vi utvecklar appar med React Native för både iOS och Android, med fokus på prestanda, säkerhet och skalbarhet.",
       },
       {
         title: "Användarupplevelse och design",
@@ -463,7 +464,7 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
         title: "Plattformsval och utveckling",
         features: [
           {
-            title: "WooCommerce & WordPress",
+            title: "Next.js, React, Sanity CMS",
             description:
               "Vi bygger flexibla och skalbara e-handelslösningar i WooCommerce och WordPress, anpassade efter dina behov.",
           },

@@ -78,7 +78,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       {sections.map((section, index) => (
         <section key={index} className="py-16 bg-orange-600">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl lg:text-4xl font-inter font-bold text-white mb-12">
                 {section.title}
               </h2>

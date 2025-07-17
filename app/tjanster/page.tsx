@@ -8,7 +8,7 @@ export default function ServicesPage() {
   return (
     <main className="bg-brand-black text-white">
       {/* Hero Section */}
-      <section className="pt-32 pb-20">
+      <section className="pt-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h1 className="text-5xl lg:text-7xl font-inter font-bold text-white mb-8">
@@ -39,7 +39,7 @@ export default function ServicesPage() {
                   </h3>
 
                   {/* Service Description */}
-                  <p className="text-gray-400 mb-6 leading-relaxed">
+                  <p className="text-gray-400 mb-6 leading-relaxed text-lg">
                     {service.shortDescription}
                   </p>
 
@@ -51,7 +51,7 @@ export default function ServicesPage() {
                         .map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-start">
                             <div className="w-1.5 h-1.5 bg-white/40 rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
-                            <span className="text-gray-300 text-sm leading-relaxed">
+                            <span className="text-gray-300 text-md leading-relaxed">
                               {feature}
                             </span>
                           </li>

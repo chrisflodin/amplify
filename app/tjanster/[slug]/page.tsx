@@ -1,5 +1,6 @@
 import { ContactSection } from "@/components/sections";
 import { getServiceDetailsBySlug } from "@/lib/services";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 interface ServicePageProps {
@@ -23,9 +24,16 @@ export default async function ServicePage({ params }: ServicePageProps) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <nav className="text-gray-400 mb-8">
-            <span>Hem</span>
+            <Link href="/" className="hover:text-white transition-colors">
+              Hem
+            </Link>
             <span className="mx-2">/</span>
-            <span>Tjänster</span>
+            <Link
+              href="/tjanster"
+              className="hover:text-white transition-colors"
+            >
+              Tjänster
+            </Link>
             <span className="mx-2">/</span>
             <span className="text-white">{service.name}</span>
           </nav>

@@ -1,0 +1,48 @@
+id: "branding"
+slug: "branding"
+name: "Branding"
+title: "Branding"
+subtitle: "Från strategi till visuell identitet"
+description: "Stärk ert varumärke med en tydlig identitet"
+shortDescription: "Vi hjälper er att bygga ett varumärke som sticker ut och skapar förtroende – från strategi till visuell identitet."
+features:
+  - "Varumärkesstrategi"
+  - "Visuell identitet"
+  - "Brandguide"
+  - "Tonalitet och kommunikation"
+detailedDescription: "Vi utvecklar varumärken som engagerar och särskiljer er på marknaden. Med en genomtänkt strategi och enhetlig visuell identitet ser vi till att ert varumärke kommunicerar rätt budskap i alla kanaler."
+
+sections:
+  - title: "Varumärkesidentitet"
+    description: "Er varumärkesidentitet är det visuella och känslomässiga uttrycket för ert företag. En stark och konsekvent identitet hjälper er att bygga igenkänning, förtroende och lojalitet bland era kunder."
+    features:
+      - title: "Logotyp"
+        description: "Vi tar fram en unik logotyp som fångar varumärkets kärna och skapar igenkänning."
+      - title: "Typografi"
+        description: "Vi väljer och anpassar typsnitt som förstärker ert budskap och ger ett enhetligt intryck."
+      - title: "Färgpalett"
+        description: "Vi definierar en färgpalett som speglar varumärkets personlighet och skapar visuell harmoni."
+      - title: "Grafiska element"
+        description: "Vi utvecklar grafiska element som stärker identiteten och ger ett professionellt uttryck."
+
+  - title: "Tonalitet"
+    description: "Tonaliteten i era meddelanden är lika viktig som själva budskapet. En tydlig och genomtänkt ton gör kommunikationen minnesvärd och engagerande."
+    features:
+      - title: "Röst och ton"
+        description: "Vi definierar hur ert varumärke låter och känns i all kommunikation för att skapa igenkänning."
+      - title: "Språk och stil"
+        description: "Vi sätter riktlinjer för språkbruk och stil så att kommunikationen alltid är tydlig och konsekvent."
+      - title: "Meddelande"
+        description: "Vi hjälper er att formulera kärnbudskap som engagerar och bygger relationer med målgruppen."
+
+  - title: "Visuell design"
+    description: "En konsekvent och genomtänkt visuell design gör ert varumärke minnesvärt och attraktivt. Vi säkerställer att alla visuella element samspelar för maximal effekt."
+    features:
+      - title: "Marknadsföringsmaterial"
+        description: "Vi designar material som stärker varumärket i alla kanaler – från tryck till digitalt."
+      - title: "Webbdesign"
+        description: "Vi skapar en visuell närvaro online som är både attraktiv och konsekvent med varumärket."
+      - title: "Sociala medier"
+        description: "Vi tar fram grafiska mallar och riktlinjer för en enhetlig närvaro i sociala medier."
+      - title: "Förpackningsdesign"
+        description: "Vi utvecklar förpackningslösningar som lyfter fram varumärket och skapar köplust."

@@ -1,0 +1,46 @@
+id: "webbutveckling"
+slug: "webbutveckling"
+name: "Webbutveckling"
+title: "Webbutveckling"
+subtitle: "Från hemsidor till REST-API"
+description: "Modern webbutveckling med React, Next.js och Sanity CMS för framtidens affärer"
+shortDescription: "Vi bygger snabba, säkra och skräddarsydda webbplatser och e-handelslösningar – alltid med fokus på prestanda och användarvänlighet."
+features:
+  - "Frontend- och backendutveckling med React och Next.js"
+  - "Sanity CMS"
+  - "Skräddarsydda lösningar"
+  - "API-integrationer och säkerhet"
+detailedDescription: "Från första kodraden till lanserad webbplats – vi tar ansvar för hela processen. Vi utvecklar tekniskt optimerade hemsidor, e-handel och applikationer i moderna ramverk som React, Next.js och Sanity CMS, alltid anpassade efter era behov och mål."
+
+sections:
+  - title: "Frontend- och backendutveckling"
+    description: "Vi tar ansvar för hela utvecklingsprocessen – från första kodraden till lanserad webbplats, alltid med fokus på kvalitet och användarupplevelse."
+    features:
+      - title: "Modern teknikstack"
+        description: "Vi använder de senaste ramverken och teknikerna för att bygga snabba och skalbara webbplatser."
+      - title: "Responsiv design"
+        description: "Vi säkerställer att din webbplats fungerar och ser bra ut på alla enheter och skärmstorlekar."
+      - title: "CMS-lösningar"
+        description: "Vi implementerar användarvänliga innehållshanteringssystem som gör det enkelt att uppdatera din webbplats."
+      - title: "Skräddarsydd backend"
+        description: "Vi utvecklar backend-lösningar anpassade efter dina affärsbehov och mål."
+
+  - title: "API- och systemintegrationer"
+    description: "Vi integrerar din webbplats med de system och verktyg du behöver för att skapa en sömlös digital upplevelse."
+    features:
+      - title: "Tredjepartsintegrationer"
+        description: "Vi kopplar samman din webbplats med externa system som betalningslösningar, CRM och logistikplattformar."
+      - title: "Automatisering"
+        description: "Vi effektiviserar arbetsflöden genom att automatisera processer och dataflöden mellan olika system."
+      - title: "Headless-arkitektur"
+        description: "Vi bygger flexibla lösningar där frontend och backend är separerade för maximal prestanda och skalbarhet."
+
+  - title: "Säkerhet och prestanda"
+    description: "Vi prioriterar säkerhet och prestanda i varje projekt för att skapa trygga och effektiva webbupplevelser."
+    features:
+      - title: "SSL och dataskydd"
+        description: "Vi implementerar säkerhetslösningar som skyddar både din webbplats och dina användares data."
+      - title: "Prestandaoptimering"
+        description: "Vi optimerar laddningstider och ser till att din webbplats alltid är snabb och tillgänglig."
+      - title: "Underhåll och support"
+        description: "Vi erbjuder löpande underhåll och support för att din webbplats ska vara säker och uppdaterad."

@@ -1,0 +1,44 @@
+id: "ux-ui-design"
+slug: "ux-ui-design"
+name: "UX / UI design"
+title: "UX / UI design"
+subtitle: "Från användarinsikt till interaktiv design"
+description: "Design som engagerar och konverterar"
+shortDescription: "Vi skapar användarupplevelser och gränssnitt som är både snygga och intuitiva – alltid med affärsmål och användare i fokus."
+features:
+  - "Användarcentrerad design"
+  - "Prototyping och wireframes"
+  - "Interaktionsdesign"
+  - "Användartester och optimering"
+detailedDescription: "Med insiktsdriven UX och UI-design hjälper vi er att skapa digitala lösningar som stärker varumärket, ökar konverteringen och ger era användare en smidig upplevelse."
+
+sections:
+  - title: "Användarupplevelse"
+    description: "En stark användarupplevelse är grunden för digital framgång. Vi säkerställer att era digitala lösningar är intuitiva, tillgängliga och uppskattade av användarna."
+    features:
+      - title: "Användarcentrerad design"
+        description: "Vi utgår från användarens behov och beteenden för att skapa lösningar som känns naturliga och engagerande."
+      - title: "Research och analys"
+        description: "Vi genomför användarstudier och analyser för att förstå målgruppen och identifiera förbättringsområden."
+      - title: "Prototyping"
+        description: "Vi visualiserar idéer tidigt med prototyper för att testa och validera koncept innan utveckling."
+
+  - title: "Interaktionsdesign"
+    description: "Genomtänkt interaktionsdesign leder användaren rätt och skapar en positiv känsla i varje steg av resan."
+    features:
+      - title: "Wireframes"
+        description: "Vi skapar tydliga wireframes som visualiserar struktur och flöden för att optimera användarresan."
+      - title: "Mikrointeraktioner"
+        description: "Vi designar små, genomtänkta interaktioner som gör användarupplevelsen smidig och engagerande."
+      - title: "Användartester"
+        description: "Vi testar och utvärderar designen med riktiga användare för att säkerställa bästa möjliga resultat."
+
+  - title: "Designsystem"
+    description: "Ett välutvecklat designsystem ger struktur, effektivitet och en sammanhållen användarupplevelse över tid."
+    features:
+      - title: "Komponentbibliotek"
+        description: "Vi bygger återanvändbara komponenter för enhetlig design och snabbare utveckling."
+      - title: "Stilguider"
+        description: "Vi dokumenterar färger, typografi och andra visuella riktlinjer för konsekvent varumärkesupplevelse."
+      - title: "Skalbarhet"
+        description: "Vi säkerställer att designsystemet kan växa och anpassas i takt med era behov."

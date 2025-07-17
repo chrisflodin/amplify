@@ -1,0 +1,44 @@
+id: "e-handel"
+slug: "e-handel"
+name: "E-handel"
+title: "E-handel"
+subtitle: "Från produktkatalog till fullständig e-handelsplattform"
+description: "E-handelslösningar som driver försäljning"
+shortDescription: "Vi bygger användarvänliga och konverterande e-handelsplattformar – från Next.js, Sanity CMS till skräddarsydda lösningar."
+features:
+  - "Next.js, Sanity CMS"
+  - "Skräddarsydd e-handel"
+  - "Betalnings- och logistiklösningar"
+  - "Integrationer och automation"
+detailedDescription: "Vi skapar e-handelslösningar som är optimerade för tillväxt och enkel administration. Oavsett om du behöver en flexibel Next.js-butik eller en helt skräddarsydd plattform, hjälper vi dig att sälja mer och växa digitalt."
+
+sections:
+  - title: "Plattformsval och utveckling"
+    description: "Vi hjälper dig att välja och utveckla rätt plattform för din e-handel – från standardlösningar till skräddarsydd utveckling."
+    features:
+      - title: "Next.js, React, Sanity CMS"
+        description: "Vi bygger flexibla och skalbara e-handelslösningar i Next.js och Sanity CMS, anpassade efter dina behov."
+      - title: "Skräddarsydd e-handel"
+        description: "Vi utvecklar unika plattformar för komplexa krav och integrationer, helt enligt dina önskemål."
+      - title: "Integrationer"
+        description: "Vi kopplar ihop din e-handel med affärssystem, logistik och betalningslösningar för en smidig drift."
+
+  - title: "Konverteringsoptimering"
+    description: "Vi maximerar din försäljning genom att optimera användarupplevelsen och förenkla köpprocessen."
+    features:
+      - title: "Användarvänlig design"
+        description: "Vi skapar gränssnitt som gör det enkelt och inspirerande att handla online."
+      - title: "Kundresa och checkout"
+        description: "Vi optimerar hela köpupplevelsen – från första besöket till slutförd betalning."
+      - title: "Mobilanpassning"
+        description: "Vi ser till att din butik fungerar perfekt på alla enheter och skärmstorlekar."
+
+  - title: "Drift och tillväxt"
+    description: "Vi stöttar dig med drift, support och strategier för att din e-handel ska växa och utvecklas över tid."
+    features:
+      - title: "Automatisering"
+        description: "Vi implementerar automatiserade flöden för order, lager och marknadsföring."
+      - title: "Prestanda och säkerhet"
+        description: "Vi ser till att din e-handel är snabb, säker och alltid tillgänglig för dina kunder."
+      - title: "Uppföljning och analys"
+        description: "Vi mäter och analyserar resultat för att ständigt förbättra och växa din e-handel."

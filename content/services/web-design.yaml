@@ -1,0 +1,44 @@
+id: "web-design"
+slug: "web-design"
+name: "Web design"
+title: "Web design"
+subtitle: "Från koncept till färdig design"
+description: "Visuell design som inspirerar"
+shortDescription: "Vi skapar visuellt tilltalande webbdesign som speglar ditt varumärke och engagerar dina besökare."
+features:
+  - "Visuell design"
+  - "Responsiv layout"
+  - "Typografi"
+  - "Färgscheman"
+detailedDescription: "En väldesignad webbplats är grunden för digital framgång. Vi skapar design som både ser fantastisk ut och fungerar perfekt."
+
+sections:
+  - title: "Visuell identitet"
+    description: "Vi bygger en visuell identitet som gör att din webbplats sticker ut och känns professionell."
+    features:
+      - title: "Färgscheman och typografi"
+        description: "Vi skapar harmoniska färgscheman och väljer typografi som förstärker ditt varumärke."
+      - title: "Bildspråk och ikoner"
+        description: "Vi använder bilder och ikoner som stödjer budskapet och skapar en unik känsla."
+      - title: "Grafiska element"
+        description: "Vi designar grafiska element som ger webbplatsen karaktär och igenkänning."
+
+  - title: "Responsivitet och tillgänglighet"
+    description: "Vi säkerställer att din webbplats är tillgänglig, snabb och användarvänlig för alla besökare."
+    features:
+      - title: "Responsiv design"
+        description: "Vi ser till att din webbplats fungerar och ser bra ut på alla enheter och skärmstorlekar."
+      - title: "Tillgänglighetsanpassning"
+        description: "Vi följer riktlinjer för tillgänglighet så att alla användare kan ta del av innehållet."
+      - title: "Prestandaoptimering"
+        description: "Vi optimerar laddningstider och teknisk prestanda för bästa möjliga användarupplevelse."
+
+  - title: "Design för konvertering"
+    description: "Vi designar med fokus på att öka engagemang och konverteringar på din webbplats."
+    features:
+      - title: "Tydliga call-to-actions"
+        description: "Vi utformar knappar och uppmaningar som leder besökaren mot dina mål."
+      - title: "Strukturerad layout"
+        description: "Vi organiserar innehållet för att göra det lätt att navigera och hitta information."
+      - title: "A/B-testning"
+        description: "Vi testar och optimerar designen för att maximera konverteringsgraden."

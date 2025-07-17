@@ -1,0 +1,44 @@
+id: "growth"
+slug: "growth"
+name: "Growth"
+title: "Growth"
+subtitle: "Från analys till skalbar tillväxt"
+description: "Datadriven tillväxt och konverteringsoptimering"
+shortDescription: "Vi utvecklar och implementerar strategier som driver mätbar tillväxt och ökar din lönsamhet."
+features:
+  - "Tillväxtanalys"
+  - "Konverteringsoptimering (CRO)"
+  - "Automatisering och leadgenerering"
+  - "Prestandamätning och rapportering"
+detailedDescription: "Vi hjälper dig att växa genom att analysera data, optimera konverteringar och automatisera processer. Med fokus på resultat och ständig förbättring skapar vi en grund för långsiktig tillväxt."
+
+sections:
+  - title: "Tillväxtstrategi"
+    description: "Vi utvecklar en datadriven strategi som lägger grunden för långsiktig och hållbar tillväxt."
+    features:
+      - title: "Målgruppsanalys"
+        description: "Vi analyserar din målgrupp och marknad för att identifiera nya tillväxtmöjligheter."
+      - title: "Kundresa"
+        description: "Vi kartlägger och optimerar kundresan för att öka engagemang och lojalitet."
+      - title: "Strategisk planering"
+        description: "Vi tar fram en konkret plan för att driva tillväxt och nå dina affärsmål."
+
+  - title: "Konverteringsoptimering"
+    description: "Vi ökar din lönsamhet genom att optimera konverteringar och förbättra användarupplevelsen."
+    features:
+      - title: "A/B-testning"
+        description: "Vi testar och optimerar olika delar av din webbplats för att maximera konverteringsgraden."
+      - title: "Funnel-analys"
+        description: "Vi analyserar och förbättrar varje steg i sälj- och marknadsföringstratten."
+      - title: "UX-förbättringar"
+        description: "Vi identifierar och åtgärdar hinder i användarupplevelsen för att öka avslut och försäljning."
+
+  - title: "Automatisering och analys"
+    description: "Vi automatiserar och analyserar för att skapa en skalbar och effektiv tillväxtresa."
+    features:
+      - title: "Leadgenerering"
+        description: "Vi implementerar automatiserade processer för att generera och vårda leads."
+      - title: "Prestandamätning"
+        description: "Vi mäter och rapporterar resultat för att säkerställa att tillväxtinsatserna ger effekt."
+      - title: "Löpande optimering"
+        description: "Vi arbetar kontinuerligt med att förbättra och justera strategier baserat på data och insikter."

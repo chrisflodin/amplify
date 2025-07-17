@@ -1,0 +1,44 @@
+id: "apputveckling"
+slug: "apputveckling"
+name: "Apputveckling"
+title: "Apputveckling"
+subtitle: "Från iOS till Android och cross-platform"
+description: "Mobilappar som engagerar användare"
+shortDescription: "Vi utvecklar intuitiva och funktionella mobilappar för iOS och Android som förbättrar användarupplevelsen."
+features:
+  - "iOS-utveckling"
+  - "Android-utveckling"
+  - "Cross-platform"
+  - "App Store-optimering"
+detailedDescription: "I den mobila eran behöver företag en stark appnärvaro. Vi skapar appar som inte bara fungerar smidigt utan också engagerar användare."
+
+sections:
+  - title: "Plattformsutveckling"
+    description: "Vi utvecklar appar med React Native för både iOS och Android, med fokus på prestanda, säkerhet och skalbarhet."
+    features:
+      - title: "iOS och Android med React Native"
+        description: "Vi utvecklar appar för både iOS och Android med React Native för maximal räckvidd och effektivitet."
+      - title: "Cross-platform med React Native"
+        description: "Vi använder React Native för att bygga appar som fungerar sömlöst på flera plattformar med en gemensam kodbas."
+      - title: "Backend och API"
+        description: "Vi bygger robusta backend-lösningar och integrerar API:er för att ge din app kraftfull funktionalitet."
+
+  - title: "Användarupplevelse och design"
+    description: "En bra app bygger på en stark användarupplevelse. Vi fokuserar på design och interaktion för att skapa nöjda användare."
+    features:
+      - title: "Intuitiva gränssnitt"
+        description: "Vi designar användarvänliga gränssnitt som gör appen enkel och rolig att använda."
+      - title: "Interaktionsdesign"
+        description: "Vi skapar engagerande interaktioner som ökar användarnas engagemang och lojalitet."
+      - title: "Tillgänglighet"
+        description: "Vi ser till att appen är tillgänglig för alla användare, oavsett behov eller enhet."
+
+  - title: "Lansering och optimering"
+    description: "Vi hjälper dig hela vägen från lansering till vidareutveckling och optimering av din app."
+    features:
+      - title: "App Store-optimering"
+        description: "Vi optimerar din app för att synas och lyckas i App Store och Google Play."
+      - title: "Prestanda och säkerhet"
+        description: "Vi testar och optimerar appen för snabbhet, stabilitet och datasäkerhet."
+      - title: "Uppdateringar och support"
+        description: "Vi erbjuder löpande support och uppdateringar för att din app alltid ska vara aktuell och fungerande."

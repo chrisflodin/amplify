@@ -18,7 +18,7 @@ export default function HeroSection({ projects }: HeroSectionProps) {
                 Vi bygger din digitala framgång
               </h1>
               <p className="hero-subtitle text-gray-300">
-                En digitalbyrå som har hjälpt några av Sveriges mest
+                En digital byrå som har hjälpt några av Sveriges mest
                 framgångsrika entreprenörer med deras hemsidor och
                 marknadsföring. <br />
               </p>

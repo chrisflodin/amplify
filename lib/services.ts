@@ -131,10 +131,30 @@ export function getAllServices(): Service[] {
   const slugs = getServiceSlugs();
   const services = slugs
     .map((slug) => getServiceBySlug(slug))
-    .filter((service): service is Service => service !== undefined)
-    .sort((a, b) => a.order - b.order); // Sort by order field
+    .filter((service): service is Service => service !== undefined);
+
+  // Hardcoded order of slugs
+  const ORDER = [
+    "webbutveckling",
+    "apputveckling",
+    "branding",
+    "ux-ui-design",
+    "e-handel",
+    "seo",
+    "content",
+    "growth",
+    "foto-video",
+  ];
+
+  // Sort services by the ORDER array, append any not in the list at the end
+  const orderedServices = [
+    ...ORDER.map((slug) => services.find((s) => s.slug === slug)).filter(
+      (s): s is Service => Boolean(s)
+    ),
+    ...services.filter((s) => !ORDER.includes(s.slug)),
+  ];
 
   // Cache the results
-  servicesCache = services;
-  return services;
+  servicesCache = orderedServices;
+  return orderedServices;
 }

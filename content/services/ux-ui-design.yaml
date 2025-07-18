@@ -14,7 +14,7 @@ detailedDescription: "Med insiktsdriven UX och UI-design hjälper vi er att skap
 
 sections:
   - title: "Användarupplevelse"
-    description: "En stark användarupplevelse är grunden för digital framgång. Vi säkerställer att era digitala lösningar är intuitiva, tillgängliga och uppskattade av användarna."
+    description: "En stark användarupplevelse är grunden för digital framgång. Vi utgår från användarens behov och beteenden för att skapa lösningar som känns naturliga, engagerande och tillgängliga – och som uppskattas av både användare och affärsmål."
     features:
       - title: "Användarcentrerad design"
         description: "Vi utgår från användarens behov och beteenden för att skapa lösningar som känns naturliga och engagerande."
@@ -24,7 +24,7 @@ sections:
         description: "Vi visualiserar idéer tidigt med prototyper för att testa och validera koncept innan utveckling."
 
   - title: "Interaktionsdesign"
-    description: "Genomtänkt interaktionsdesign leder användaren rätt och skapar en positiv känsla i varje steg av resan."
+    description: "Genomtänkt interaktionsdesign leder användaren rätt och skapar en positiv känsla i varje steg. Vi optimerar flöden, mikrointeraktioner och tester för att skapa en smidig, engagerande och effektiv digital resa för alla användare."
     features:
       - title: "Wireframes"
         description: "Vi skapar tydliga wireframes som visualiserar struktur och flöden för att optimera användarresan."
@@ -34,7 +34,7 @@ sections:
         description: "Vi testar och utvärderar designen med riktiga användare för att säkerställa bästa möjliga resultat."
 
   - title: "Designsystem"
-    description: "Ett välutvecklat designsystem ger struktur, effektivitet och en sammanhållen användarupplevelse över tid."
+    description: "Ett välutvecklat designsystem ger struktur, effektivitet och en sammanhållen användarupplevelse över tid. Vi bygger skalbara komponentbibliotek och stilguider som säkerställer enhetlighet och snabbare utveckling i alla projekt."
     features:
       - title: "Komponentbibliotek"
         description: "Vi bygger återanvändbara komponenter för enhetlig design och snabbare utveckling."

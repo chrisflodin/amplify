@@ -112,7 +112,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                               {feature.title}
                             </h3>
                             {feature.description && (
-                              <p className="text-gray-600 text-md">
+                              <p className="text-gray-600 text-xl">
                                 {feature.description}
                               </p>
                             )}

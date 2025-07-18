@@ -14,7 +14,7 @@ detailedDescription: "Vi skapar e-handelslösningar som är optimerade för till
 
 sections:
   - title: "Plattformsval och utveckling"
-    description: "Vi hjälper dig att välja och utveckla rätt plattform för din e-handel – från standardlösningar till skräddarsydd utveckling."
+    description: "Vi hjälper dig att välja och utveckla rätt plattform för din e-handel – från standardlösningar till skräddarsydd utveckling. Vi bygger flexibla, skalbara och integrerade system som är anpassade efter dina unika behov och mål."
     features:
       - title: "Next.js, React, Sanity CMS"
         description: "Vi bygger flexibla och skalbara e-handelslösningar i Next.js och Sanity CMS, anpassade efter dina behov."
@@ -24,7 +24,7 @@ sections:
         description: "Vi kopplar ihop din e-handel med affärssystem, logistik och betalningslösningar för en smidig drift."
 
   - title: "Konverteringsoptimering"
-    description: "Vi maximerar din försäljning genom att optimera användarupplevelsen och förenkla köpprocessen."
+    description: "Vi maximerar din försäljning genom att optimera användarupplevelsen och förenkla köpprocessen. Med fokus på design, checkout och mobilanpassning skapar vi en inspirerande och effektiv kundresa som driver konvertering."
     features:
       - title: "Användarvänlig design"
         description: "Vi skapar gränssnitt som gör det enkelt och inspirerande att handla online."
@@ -34,7 +34,7 @@ sections:
         description: "Vi ser till att din butik fungerar perfekt på alla enheter och skärmstorlekar."
 
   - title: "Drift och tillväxt"
-    description: "Vi stöttar dig med drift, support och strategier för att din e-handel ska växa och utvecklas över tid."
+    description: "Vi stöttar dig med drift, support och strategier för att din e-handel ska växa och utvecklas över tid. Genom automatisering, prestandaoptimering och analys skapar vi en trygg, skalbar och lönsam e-handelsresa."
     features:
       - title: "Automatisering"
         description: "Vi implementerar automatiserade flöden för order, lager och marknadsföring."

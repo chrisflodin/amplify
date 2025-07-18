@@ -14,7 +14,7 @@ detailedDescription: "Från första kodraden till lanserad webbplats – vi tar 
 
 sections:
   - title: "Frontend- och backendutveckling"
-    description: "Vi tar ansvar för hela utvecklingsprocessen – från första kodraden till lanserad webbplats, alltid med fokus på kvalitet och användarupplevelse."
+    description: "Vi ansvarar för hela utvecklingsprocessen – från första kodraden till lanserad webbplats. Med fokus på kvalitet och användarupplevelse bygger vi moderna, snabba och skalbara lösningar som stärker ert varumärke och driver affären framåt."
     features:
       - title: "Modern teknikstack"
         description: "Vi använder de senaste ramverken och teknikerna för att bygga snabba och skalbara webbplatser."
@@ -26,7 +26,7 @@ sections:
         description: "Vi utvecklar backend-lösningar anpassade efter dina affärsbehov och mål."
 
   - title: "API- och systemintegrationer"
-    description: "Vi integrerar din webbplats med de system och verktyg du behöver för att skapa en sömlös digital upplevelse."
+    description: "Vi integrerar din webbplats med de system och verktyg du behöver för att skapa en sömlös digital upplevelse. Genom smarta integrationer och automatisering effektiviserar vi arbetsflöden och skapar flexibla, framtidssäkra lösningar."
     features:
       - title: "Tredjepartsintegrationer"
         description: "Vi kopplar samman din webbplats med externa system som betalningslösningar, CRM och logistikplattformar."
@@ -36,7 +36,7 @@ sections:
         description: "Vi bygger flexibla lösningar där frontend och backend är separerade för maximal prestanda och skalbarhet."
 
   - title: "Säkerhet och prestanda"
-    description: "Vi prioriterar säkerhet och prestanda i varje projekt för att skapa trygga och effektiva webbupplevelser."
+    description: "Vi prioriterar säkerhet och prestanda i varje projekt. Genom att implementera robusta skydd, optimera laddningstider och erbjuda löpande support ser vi till att din webbplats alltid är snabb, trygg och tillgänglig för alla användare."
     features:
       - title: "SSL och dataskydd"
         description: "Vi implementerar säkerhetslösningar som skyddar både din webbplats och dina användares data."

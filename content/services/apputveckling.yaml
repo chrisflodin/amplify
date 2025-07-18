@@ -14,7 +14,7 @@ detailedDescription: "I den mobila eran behöver företag en stark appnärvaro. 
 
 sections:
   - title: "Plattformsutveckling"
-    description: "Vi utvecklar appar med React Native för både iOS och Android, med fokus på prestanda, säkerhet och skalbarhet."
+    description: "Vi utvecklar appar med React Native för både iOS och Android. Med fokus på prestanda, säkerhet och skalbarhet bygger vi lösningar som fungerar sömlöst på flera plattformar och ger maximal räckvidd och effektivitet för ditt företag."
     features:
       - title: "iOS och Android med React Native"
         description: "Vi utvecklar appar för både iOS och Android med React Native för maximal räckvidd och effektivitet."
@@ -24,7 +24,7 @@ sections:
         description: "Vi bygger robusta backend-lösningar och integrerar API:er för att ge din app kraftfull funktionalitet."
 
   - title: "Användarupplevelse och design"
-    description: "En bra app bygger på en stark användarupplevelse. Vi fokuserar på design och interaktion för att skapa nöjda användare."
+    description: "En bra app bygger på en stark användarupplevelse. Vi fokuserar på intuitiv design och engagerande interaktioner som gör appen enkel, rolig och tillgänglig för alla användare – oavsett behov, enhet eller plattform."
     features:
       - title: "Intuitiva gränssnitt"
         description: "Vi designar användarvänliga gränssnitt som gör appen enkel och rolig att använda."
@@ -34,7 +34,7 @@ sections:
         description: "Vi ser till att appen är tillgänglig för alla användare, oavsett behov eller enhet."
 
   - title: "Lansering och optimering"
-    description: "Vi hjälper dig hela vägen från lansering till vidareutveckling och optimering av din app."
+    description: "Vi hjälper dig hela vägen från lansering till vidareutveckling och optimering. Med fokus på App Store-optimering, prestanda, säkerhet och löpande support ser vi till att din app alltid är aktuell, snabb och konkurrenskraftig."
     features:
       - title: "App Store-optimering"
         description: "Vi optimerar din app för att synas och lyckas i App Store och Google Play."

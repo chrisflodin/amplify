@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import Link from "next/link";
@@ -79,28 +80,6 @@ export default function ContactPage() {
               digitala mål. Boka ett möte eller skicka oss ett meddelande så
               återkommer vi inom 24 timmar.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="https://calendly.com/christopher-flodin"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="bg-white text-brand-black hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
-                  Boka möte direkt
-                </Button>
-              </Link>
-              <Button
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-brand-black px-8 py-4 text-lg font-semibold"
-                onClick={() =>
-                  document
-                    .getElementById("contact-form")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                Skicka meddelande
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -108,12 +87,35 @@ export default function ContactPage() {
       {/* Main Contact Section */}
       <section id="contact-form" className="py-20 bg-brand-black text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              {/* Left Column - Calendly Booking */}
-              <div className="space-y-6 col-span-2">
-                <div className="text-center lg:text-left">
-                  <h3 className="text-3xl font-inter font-bold mb-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-inter font-bold mb-6">
+                Kom i kontakt med oss
+              </h2>
+              <p className="text-xl text-gray-300">
+                Välj det sätt som passar dig bäst
+              </p>
+            </div>
+
+            <Tabs defaultValue="booking" className="w-full">
+              <TabsList className="grid w-full grid-cols-2 bg-white/10 border border-white/20 rounded-xl p-1 mb-8">
+                <TabsTrigger
+                  value="booking"
+                  className="text-white data-[state=active]:bg-white data-[state=active]:text-brand-black rounded-lg py-3 font-semibold"
+                >
+                  Boka ett möte
+                </TabsTrigger>
+                <TabsTrigger
+                  value="message"
+                  className="text-white data-[state=active]:bg-white data-[state=active]:text-brand-black rounded-lg py-3 font-semibold"
+                >
+                  Skicka meddelande
+                </TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="booking" className="space-y-6">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-inter font-bold mb-4">
                     Boka ett möte
                   </h3>
                   <p className="text-gray-300 mb-8">
@@ -122,7 +124,6 @@ export default function ContactPage() {
                   </p>
                 </div>
 
-                {/* Calendly Link */}
                 <div className="bg-white/5 border border-white/10 rounded-3xl p-8 min-h-[500px] flex flex-col items-center justify-center text-center space-y-6">
                   <div className="w-40 h-40 relative">
                     <Image
@@ -152,9 +153,8 @@ export default function ContactPage() {
                     </Button>
                   </Link>
 
-                  {/* Alternative Contact Info */}
                   <div className="pt-8 border-t border-white/10 space-y-4">
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center justify-center space-x-3">
                       <svg
                         className="w-5 h-5 text-gray-400"
                         fill="none"
@@ -170,7 +170,7 @@ export default function ContactPage() {
                       </svg>
                       <span className="text-gray-300">+46 76 145 53 98</span>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center justify-center space-x-3">
                       <svg
                         className="w-5 h-5 text-gray-400"
                         fill="none"
@@ -190,19 +190,11 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </TabsContent>
 
-              {/* Middle Column - "eller..." */}
-              <div className="flex items-center justify-center">
-                <div className="bg-brand-black text-2xl px-4 py-2 rounded-full border border-white/20">
-                  <span className="text-white/60 font-medium">eller...</span>
-                </div>
-              </div>
-
-              {/* Right Column - Contact Form */}
-              <div className="space-y-6 col-span-2">
-                <div className="text-center lg:text-left">
-                  <h3 className="text-3xl font-inter font-bold mb-4">
+              <TabsContent value="message" className="space-y-6">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-inter font-bold mb-4">
                     Skicka meddelande
                   </h3>
                   <p className="text-gray-300 mb-8">
@@ -211,73 +203,75 @@ export default function ContactPage() {
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                  <div>
-                    <input
-                      {...register("name")}
-                      type="text"
-                      placeholder="Namn"
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
-                    />
-                    {errors.name && (
-                      <p className="text-red-400 text-sm mt-1">
-                        {errors.name.message}
-                      </p>
-                    )}
-                  </div>
+                <div className="max-w-2xl mx-auto">
+                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                    <div>
+                      <input
+                        {...register("name")}
+                        type="text"
+                        placeholder="Namn"
+                        className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
+                      />
+                      {errors.name && (
+                        <p className="text-red-400 text-sm mt-1">
+                          {errors.name.message}
+                        </p>
+                      )}
+                    </div>
 
-                  <div>
-                    <input
-                      {...register("email")}
-                      type="email"
-                      placeholder="E-post"
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
-                    />
-                    {errors.email && (
-                      <p className="text-red-400 text-sm mt-1">
-                        {errors.email.message}
-                      </p>
-                    )}
-                  </div>
+                    <div>
+                      <input
+                        {...register("email")}
+                        type="email"
+                        placeholder="E-post"
+                        className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
+                      />
+                      {errors.email && (
+                        <p className="text-red-400 text-sm mt-1">
+                          {errors.email.message}
+                        </p>
+                      )}
+                    </div>
 
-                  <div>
-                    <input
-                      {...register("phone")}
-                      type="tel"
-                      placeholder="Telefonnummer"
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
-                    />
-                    {errors.phone && (
-                      <p className="text-red-400 text-sm mt-1">
-                        {errors.phone.message}
-                      </p>
-                    )}
-                  </div>
+                    <div>
+                      <input
+                        {...register("phone")}
+                        type="tel"
+                        placeholder="Telefonnummer"
+                        className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
+                      />
+                      {errors.phone && (
+                        <p className="text-red-400 text-sm mt-1">
+                          {errors.phone.message}
+                        </p>
+                      )}
+                    </div>
 
-                  <div>
-                    <textarea
-                      {...register("message")}
-                      placeholder="Berätta om ditt projekt - vad vill du uppnå och hur kan vi hjälpa till?"
-                      rows={6}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors resize-none"
-                    />
-                    {errors.message && (
-                      <p className="text-red-400 text-sm mt-1">
-                        {errors.message.message}
-                      </p>
-                    )}
-                  </div>
+                    <div>
+                      <textarea
+                        {...register("message")}
+                        placeholder="Berätta om ditt projekt - vad vill du uppnå och hur kan vi hjälpa till?"
+                        rows={6}
+                        className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors resize-none"
+                      />
+                      {errors.message && (
+                        <p className="text-red-400 text-sm mt-1">
+                          {errors.message.message}
+                        </p>
+                      )}
+                    </div>
 
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-white text-brand-black hover:bg-gray-100 py-3 font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? "Skickar..." : "Skicka meddelande"}
-                  </Button>
-                </form>
-              </div>
-            </div>
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-white text-brand-black hover:bg-gray-100 py-3 font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? "Skickar..." : "Skicka meddelande"}
+                    </Button>
+                  </form>
+                </div>
+              </TabsContent>
+            </Tabs>
           </div>
         </div>
       </section>

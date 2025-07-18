@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import Link from "next/link";
@@ -81,20 +82,24 @@ export default function ContactSection({
           <p className="text-xl text-gray-300 max-w-md mx-auto">{subtitle}</p>
         </div>
 
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-            {/* Left Column - Calendly Booking */}
-            <div className="space-y-6 col-span-2">
-              <div className="text-center lg:text-left">
-                <h3 className="text-2xl font-inter font-bold mb-4">
-                  Boka ett möte
-                </h3>
-                <p className="text-gray-300 mb-8">
-                  Välj en tid som passar dig så diskuterar vi ditt projekt
-                </p>
-              </div>
+        <div className="max-w-xl mx-auto">
+          <Tabs defaultValue="booking" className="w-full">
+            <TabsList className="grid w-full grid-cols-2 bg-white/10 border border-white/20 rounded-xl p-0 mb-8">
+              <TabsTrigger
+                value="booking"
+                className="text-white data-[state=active]:bg-white data-[state=active]:text-brand-black rounded-none rounded-l-xl py-[9px] font-semibold"
+              >
+                Boka ett möte
+              </TabsTrigger>
+              <TabsTrigger
+                value="message"
+                className="text-white data-[state=active]:bg-white data-[state=active]:text-brand-black rounded-none rounded-r-xl py-[9px] font-semibold"
+              >
+                Skicka meddelande
+              </TabsTrigger>
+            </TabsList>
 
-              {/* Calendly Link */}
+            <TabsContent value="booking" className="space-y-6">
               <div className="bg-white/5 border border-white/10 rounded-3xl p-8 min-h-[500px] flex flex-col items-center justify-center text-center space-y-6">
                 <div className="w-40 h-40 relative">
                   <Image
@@ -124,9 +129,8 @@ export default function ContactSection({
                   </Button>
                 </Link>
 
-                {/* Alternative Contact Info */}
                 <div className="pt-8 border-t border-white/10 space-y-4">
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center justify-center space-x-2">
                     <svg
                       className="w-5 h-5 text-gray-400"
                       fill="none"
@@ -140,97 +144,129 @@ export default function ContactSection({
                         d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                       />
                     </svg>
-                    <span className="text-gray-300">+46 76 145 53 98</span>
+                    <span className="text-gray-300">
+                      <a href="tel:+46 76 145 53 98">+46 76 145 53 98</a>
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <svg
+                      className="w-5 h-5 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span className="text-gray-300">
+                      christopher.flodin@weareamplify.se
+                    </span>
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText(
+                          "christopher.flodin@weareamplify.se"
+                        );
+                        toast.success("Email kopierad!", {
+                          description:
+                            "E-postadressen har kopierats till urklipp.",
+                        });
+                      }}
+                      className="p-1 hover:bg-white/10 rounded transition-colors"
+                      title="Kopiera e-postadress"
+                    >
+                      <svg
+                        className="w-4 h-4 text-gray-400 hover:text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </button>
                   </div>
                 </div>
               </div>
-            </div>
+            </TabsContent>
 
-            {/* Middle Column - "eller..." */}
-            <div className="flex items-center justify-center">
-              <div className="bg-brand-black text-2xl px-4 py-2 rounded-full border border-white/20">
-                <span className="text-white/60 font-medium">eller...</span>
+            <TabsContent value="message" className="space-y-6">
+              <div className="max-w-2xl mx-auto">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                  <div>
+                    <input
+                      {...register("name")}
+                      type="text"
+                      placeholder="Namn"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
+                    />
+                    {errors.name && (
+                      <p className="text-red-400 text-sm mt-1">
+                        {errors.name.message}
+                      </p>
+                    )}
+                  </div>
+
+                  <div>
+                    <input
+                      {...register("email")}
+                      type="email"
+                      placeholder="E-post"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
+                    />
+                    {errors.email && (
+                      <p className="text-red-400 text-sm mt-1">
+                        {errors.email.message}
+                      </p>
+                    )}
+                  </div>
+
+                  <div>
+                    <input
+                      {...register("phone")}
+                      type="tel"
+                      placeholder="Telefonnummer"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
+                    />
+                    {errors.phone && (
+                      <p className="text-red-400 text-sm mt-1">
+                        {errors.phone.message}
+                      </p>
+                    )}
+                  </div>
+
+                  <div>
+                    <textarea
+                      {...register("message")}
+                      placeholder="Skriv ditt meddelande här"
+                      rows={6}
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors resize-none"
+                    />
+                    {errors.message && (
+                      <p className="text-red-400 text-sm mt-1">
+                        {errors.message.message}
+                      </p>
+                    )}
+                  </div>
+
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-white text-brand-black hover:bg-gray-100 py-3 font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? "Skickar..." : "Skicka meddelande"}
+                  </Button>
+                </form>
               </div>
-            </div>
-
-            {/* Right Column - Contact Form */}
-            <div className="space-y-6 col-span-2">
-              <div className="text-center lg:text-left">
-                <h3 className="text-2xl font-inter font-bold mb-4">
-                  Skicka meddelande
-                </h3>
-                <p className="text-gray-300 mb-8">
-                  Fyll i formuläret så återkommer vi inom 24 timmar
-                </p>
-              </div>
-
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                <div>
-                  <input
-                    {...register("name")}
-                    type="text"
-                    placeholder="Namn"
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
-                  />
-                  {errors.name && (
-                    <p className="text-red-400 text-sm mt-1">
-                      {errors.name.message}
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <input
-                    {...register("email")}
-                    type="email"
-                    placeholder="E-post"
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
-                  />
-                  {errors.email && (
-                    <p className="text-red-400 text-sm mt-1">
-                      {errors.email.message}
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <input
-                    {...register("phone")}
-                    type="tel"
-                    placeholder="Telefonnummer"
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
-                  />
-                  {errors.phone && (
-                    <p className="text-red-400 text-sm mt-1">
-                      {errors.phone.message}
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <textarea
-                    {...register("message")}
-                    placeholder="Skriv ditt meddelande här"
-                    rows={6}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors resize-none"
-                  />
-                  {errors.message && (
-                    <p className="text-red-400 text-sm mt-1">
-                      {errors.message.message}
-                    </p>
-                  )}
-                </div>
-
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-white text-brand-black hover:bg-gray-100 py-3 font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? "Skickar..." : "Skicka meddelande"}
-                </Button>
-              </form>
-            </div>
-          </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
     </section>

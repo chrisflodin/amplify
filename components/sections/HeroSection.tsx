@@ -1,5 +1,6 @@
 import type { Project } from "@/types/project";
-import ContactButton from "./ContactButton";
+import Link from "next/link";
+import { Button } from "../ui/button";
 import HeroCarousel from "./HeroCarousel";
 
 interface HeroSectionProps {
@@ -25,7 +26,14 @@ export default function HeroSection({ projects }: HeroSectionProps) {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <ContactButton />
+              <Link href={"/kontakt"}>
+                <Button
+                  size="lg"
+                  className="bg-white text-brand-black hover:bg-gray-100 font-semibold px-8 py-4 text-lg"
+                >
+                  Kontakta oss
+                </Button>
+              </Link>
             </div>
           </div>
 

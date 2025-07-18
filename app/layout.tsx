@@ -1,3 +1,4 @@
+import GoogleAnalytics from "@/components/analytics";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { Toaster } from "@/components/ui/toaster";
@@ -9,7 +10,6 @@ export const metadata: Metadata = {
   title: "amplify - Vi bygger din digitala framgång",
   description:
     "Vi har hjälpt några av Sveriges mest framgångsrika entreprenörer att växla upp. Gör det du med.",
-  generator: "amplify",
 };
 
 export default function RootLayout({
@@ -22,6 +22,7 @@ export default function RootLayout({
       <body
         className={`${source_Sans_3.className} ${inter.variable} antialiased`}
       >
+        <GoogleAnalytics />
         <Header />
         {children}
         <Footer />

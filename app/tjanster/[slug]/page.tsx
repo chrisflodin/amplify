@@ -1,5 +1,6 @@
 import { ContactSection } from "@/components/sections";
 import { getServiceDetailsBySlug } from "@/lib/services";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -70,17 +71,14 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </div>
 
             {/* Right Column - Service Image */}
-            <div className="relative rounded-3xl overflow-hidden bg-gray-800 h-96 lg:h-[500px]">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 bg-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-white text-2xl font-bold">
-                      {service.name.charAt(0)}
-                    </span>
-                  </div>
-                  <p className="text-gray-400">Service illustration</p>
-                </div>
-              </div>
+            <div className="relative rounded-3xl overflow-hidden bg-gray-800 ">
+              <Image
+                src={`/images/service-hero-images/${slug}.png`}
+                className="object-cover"
+                alt={"webbyrå" + service.title}
+                width={1536}
+                height={1024}
+              />
             </div>
           </div>
         </div>
@@ -112,7 +110,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                               {feature.title}
                             </h3>
                             {feature.description && (
-                              <p className="text-gray-600 text-xl">
+                              <p className="text-gray-600 text-lg">
                                 {feature.description}
                               </p>
                             )}

@@ -5,6 +5,7 @@ title: "UX / UI design"
 subtitle: "Från användarinsikt till interaktiv design"
 description: "Design som engagerar och konverterar"
 shortDescription: "Vi skapar användarupplevelser och gränssnitt som är både snygga och intuitiva – alltid med affärsmål och användare i fokus."
+order: 3
 features:
   - "Användarcentrerad design"
   - "Prototyping och wireframes"

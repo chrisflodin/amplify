@@ -131,7 +131,8 @@ export function getAllServices(): Service[] {
   const slugs = getServiceSlugs();
   const services = slugs
     .map((slug) => getServiceBySlug(slug))
-    .filter((service): service is Service => service !== undefined);
+    .filter((service): service is Service => service !== undefined)
+    .sort((a, b) => a.order - b.order); // Sort by order field
 
   // Cache the results
   servicesCache = services;

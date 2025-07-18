@@ -8,6 +8,7 @@ export interface Service {
   shortDescription: string;
   features: string[];
   detailedDescription: string;
+  order: number;
   heroImage?: string;
   color?: string;
 }

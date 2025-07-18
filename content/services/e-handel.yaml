@@ -5,6 +5,7 @@ title: "E-handel"
 subtitle: "Från produktkatalog till fullständig e-handelsplattform"
 description: "E-handelslösningar som driver försäljning"
 shortDescription: "Vi bygger användarvänliga och konverterande e-handelsplattformar – från Next.js, Sanity CMS till skräddarsydda lösningar."
+order: 6
 features:
   - "Next.js, Sanity CMS"
   - "Skräddarsydd e-handel"

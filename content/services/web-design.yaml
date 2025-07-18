@@ -5,6 +5,7 @@ title: "Web design"
 subtitle: "Från koncept till färdig design"
 description: "Visuell design som inspirerar"
 shortDescription: "Vi skapar visuellt tilltalande webbdesign som speglar ditt varumärke och engagerar dina besökare."
+order: 2
 features:
   - "Visuell design"
   - "Responsiv layout"

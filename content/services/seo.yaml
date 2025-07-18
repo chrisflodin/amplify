@@ -5,6 +5,7 @@ title: "SEO"
 subtitle: "Från teknisk optimering till innehållsstrategi"
 description: "Sökmotoroptimering för långsiktig synlighet"
 shortDescription: "Vi optimerar din webbplats för att du ska synas högre i sökresultaten och attrahera rätt besökare."
+order: 7
 features:
   - "Teknisk SEO"
   - "On-page och innehållsoptimering"

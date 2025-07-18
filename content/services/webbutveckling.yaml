@@ -5,6 +5,7 @@ title: "Webbutveckling"
 subtitle: "Från hemsidor till REST-API"
 description: "Modern webbutveckling med React, Next.js och Sanity CMS för framtidens affärer"
 shortDescription: "Vi bygger snabba, säkra och skräddarsydda webbplatser och e-handelslösningar – alltid med fokus på prestanda och användarvänlighet."
+order: 4
 features:
   - "Frontend- och backendutveckling med React och Next.js"
   - "Sanity CMS"

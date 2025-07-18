@@ -5,6 +5,7 @@ title: "Apputveckling"
 subtitle: "Från iOS till Android och cross-platform"
 description: "Mobilappar som engagerar användare"
 shortDescription: "Vi utvecklar intuitiva och funktionella mobilappar för iOS och Android som förbättrar användarupplevelsen."
+order: 5
 features:
   - "iOS-utveckling"
   - "Android-utveckling"

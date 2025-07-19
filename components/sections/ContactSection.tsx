@@ -111,10 +111,10 @@ export default function ContactSection({
                   />
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold mb-2">
+                  <h4 className="text-xl font-semibold ">
                     Boka möte med Chris
                   </h4>
-                  <p className="text-gray-400 text-sm mb-6">
+                  <p className="text-gray-400 text-sm">
                     Klicka för att se tillgängliga tider
                   </p>
                 </div>

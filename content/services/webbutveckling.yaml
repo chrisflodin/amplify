@@ -2,7 +2,7 @@ id: "webbutveckling"
 slug: "webbutveckling"
 name: "Webbutveckling"
 title: "Webbutveckling"
-subtitle: "Från hemsidor till REST-API"
+subtitle: "Från hemsidor till AI-lösningar"
 description: "Modern webbutveckling med React, Next.js och Sanity CMS för framtidens affärer"
 shortDescription: "Vi bygger snabba, säkra och skräddarsydda webbplatser och e-handelslösningar – alltid med fokus på prestanda och användarvänlighet."
 order: 4
@@ -11,7 +11,7 @@ features:
   - "Sanity CMS"
   - "Skräddarsydda lösningar"
   - "API-integrationer och säkerhet"
-detailedDescription: "Från första kodraden till lanserad webbplats – vi tar ansvar för hela processen. Vi utvecklar tekniskt optimerade hemsidor, e-handel och applikationer i moderna ramverk som React, Next.js och Sanity CMS, alltid anpassade efter era behov och mål."
+detailedDescription: "Från första kodraden till lanserad webbplats – Amplify webbyrå tar ansvar för hela processen. Vi utvecklar tekniskt optimerade hemsidor, e-handel och applikationer i moderna ramverk som React, Next.js och Sanity CMS, alltid anpassade efter era behov och mål."
 
 sections:
   - title: "Frontend- och backendutveckling"

@@ -73,11 +73,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
             {/* Right Column - Service Image */}
             <div className="relative rounded-3xl overflow-hidden bg-gray-800 ">
               <Image
-                src={`/images/service-hero-images/${slug}.png`}
+                src={`/images/service-hero-images/${slug}.webp`}
                 className="object-cover"
                 alt={"webbyrå" + service.title}
-                width={1536}
-                height={1024}
+                width={800}
+                height={533}
               />
             </div>
           </div>

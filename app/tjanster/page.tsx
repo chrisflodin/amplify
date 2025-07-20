@@ -32,31 +32,33 @@ export default function ServicesPage() {
                 href={`/tjanster/${service.slug}`}
                 className="group block"
               >
-                <div className="bg-transparent border border-white/10 rounded-2xl p-8 h-full transition-all duration-500 hover:border-white/30 hover:bg-white/5 hover:scale-[1.02]">
-                  {/* Service Title */}
-                  <h3 className="text-2xl font-inter font-bold text-white mb-4 group-hover:text-gray-100 transition-colors">
-                    {service.name}
-                  </h3>
+                <div className="flex flex-col justify-between bg-transparent border border-white/10 rounded-2xl p-8 h-full transition-all duration-500 hover:border-white/30 hover:bg-white/5 hover:scale-[1.02]">
+                  <div>
+                    {/* Service Title */}
+                    <h3 className="text-2xl font-inter font-bold text-white mb-4 group-hover:text-gray-100 transition-colors">
+                      {service.name}
+                    </h3>
 
-                  {/* Service Description */}
-                  <p className="text-gray-400 mb-6 leading-relaxed text-lg">
-                    {service.shortDescription}
-                  </p>
+                    {/* Service Description */}
+                    <p className="text-gray-400 mb-6 leading-relaxed text-lg">
+                      {service.shortDescription}
+                    </p>
 
-                  {/* Key Features */}
-                  <div className="mb-8">
-                    <ul className="space-y-3">
-                      {service.features
-                        .slice(0, 3)
-                        .map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-start">
-                            <div className="w-1.5 h-1.5 bg-white/40 rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
-                            <span className="text-gray-300 text-md leading-relaxed">
-                              {feature}
-                            </span>
-                          </li>
-                        ))}
-                    </ul>
+                    {/* Key Features */}
+                    <div className="mb-8">
+                      <ul className="space-y-3">
+                        {service.features
+                          .slice(0, 3)
+                          .map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-start">
+                              <div className="w-1.5 h-1.5 bg-white/40 rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
+                              <span className="text-gray-300 text-md leading-relaxed">
+                                {feature}
+                              </span>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
                   </div>
 
                   {/* CTA */}

@@ -1,5 +1,6 @@
 import { ContactSection } from "@/components/sections";
 import { getProjectBySlug, getRelatedProjects } from "@/lib/projects";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,6 +9,64 @@ interface ProjectPageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata({
+  params,
+}: ProjectPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
+
+  if (!project) {
+    return {
+      title: "Uppdrag inte funnet - amplify",
+      description: "Det begärda uppdraget kunde inte hittas.",
+    };
+  }
+
+  const title = `${project.longTitle} - amplify`;
+  const description =
+    project.heroDescription ||
+    project.description ||
+    `Se hur vi hjälpte ${
+      project.shortTitle
+    } med ${project.category.toLowerCase()}.`;
+
+  return {
+    title,
+    description,
+    keywords: [
+      project.category,
+      ...project.technologies,
+      "digital utveckling",
+      "webbdesign",
+      "amplify",
+      "case study",
+    ].filter(Boolean),
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      images: [
+        {
+          url: project.image,
+          width: 1200,
+          height: 630,
+          alt: project.shortTitle,
+        },
+      ],
+      siteName: "amplify",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [project.image],
+    },
+    alternates: {
+      canonical: `https://weareamplify.se/uppdrag/${slug}`,
+    },
+  };
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {

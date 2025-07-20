@@ -1,11 +1,70 @@
 import { ContactSection } from "@/components/sections";
 import { getServiceDetailsBySlug } from "@/lib/services";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 interface ServicePageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: ServicePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const serviceData = getServiceDetailsBySlug(slug);
+
+  if (!serviceData) {
+    return {
+      title: "Tjänst inte funnen - amplify",
+      description: "Den begärda tjänsten kunde inte hittas.",
+    };
+  }
+
+  const { service } = serviceData;
+  const title = `${service.title} - amplify`;
+  const description =
+    service.subtitle ||
+    service.description ||
+    `Läs mer om vår ${service.name} tjänst hos amplify.`;
+
+  return {
+    title,
+    description,
+    keywords: [
+      service.name,
+      "digital utveckling",
+      "webbdesign",
+      "tjänster",
+      "amplify",
+    ].filter(Boolean),
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      images: service.heroImage
+        ? [
+            {
+              url: service.heroImage,
+              width: 1200,
+              height: 630,
+              alt: service.name,
+            },
+          ]
+        : [],
+      siteName: "amplify",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: service.heroImage ? [service.heroImage] : [],
+    },
+    alternates: {
+      canonical: `https://weareamplify.se/tjanster/${slug}`,
+    },
+  };
 }
 
 export default async function ServicePage({ params }: ServicePageProps) {
@@ -40,7 +99,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           </nav>
 
           {/* Service Title and Image */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
             {/* Left Column - Text Content */}
             <div>
               <h1 className="text-5xl lg:text-7xl font-inter font-bold text-white mb-6">
@@ -71,13 +130,14 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </div>
 
             {/* Right Column - Service Image */}
-            <div className="relative rounded-3xl overflow-hidden bg-gray-800 ">
+            <div className="relative rounded-3xl overflow-hidden ">
               <Image
                 src={`/images/service-hero-images/${slug}.webp`}
                 className="object-cover"
                 alt={"webbyrå" + service.title}
                 width={800}
                 height={533}
+                priority
               />
             </div>
           </div>

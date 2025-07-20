@@ -10,6 +10,15 @@ export const metadata: Metadata = {
   title: "amplify - Vi bygger din digitala framgång",
   description:
     "Vi har hjälpt några av Sveriges mest framgångsrika entreprenörer att växla upp. Gör det du med.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32", type: "image/png" },
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-icon.png",
+    shortcut: "/favicon.ico",
+  },
+  metadataBase: new URL("https://weareamplify.se"),
 };
 
 export default function RootLayout({

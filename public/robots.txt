@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Block Sanity studio if accessible via this domain
+Disallow: /studio/
+
+# Allow all pages for SEO
+Allow: /artiklar/
+Allow: /uppdrag/
+Allow: /tjanster/
+Allow: /jobb/
+Allow: /kontakt/
+
+# Sitemap location
+Sitemap: https://weareamplify.se/sitemap.xml
+
+# Crawl delay (optional - remove if causing issues)
+Crawl-delay: 1 

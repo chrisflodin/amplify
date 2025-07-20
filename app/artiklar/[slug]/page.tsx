@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SanityService } from "@/services/sanity";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -9,6 +10,68 @@ interface ArticlePageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata({
+  params,
+}: ArticlePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const article = await SanityService.getArticleBySlug(slug);
+
+  if (!article) {
+    return {
+      title: "Artikel inte funnen - amplify",
+      description: "Den begärda artikeln kunde inte hittas.",
+    };
+  }
+
+  const title = `${article.title} - amplify`;
+  const description =
+    article.subtitle || `Läs mer om ${article.title} på amplify's blogg.`;
+  const imageUrl = article.image
+    ? SanityService.getImageUrl(article.image, 1200, 630)
+    : null;
+
+  return {
+    title,
+    description,
+    keywords: [
+      article.category || "",
+      "digital utveckling",
+      "design",
+      "teknik",
+      "amplify",
+      "blogg",
+    ].filter(Boolean),
+    authors: [{ name: article.author || "amplify" }],
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      publishedTime: article.date,
+      authors: [article.author || "amplify"],
+      images: imageUrl
+        ? [
+            {
+              url: imageUrl,
+              width: 1200,
+              height: 630,
+              alt: article.title || "Article image",
+            },
+          ]
+        : [],
+      siteName: "amplify",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: imageUrl ? [imageUrl] : [],
+    },
+    alternates: {
+      canonical: `https://weareamplify.se/artiklar/${slug}`,
+    },
+  };
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {

@@ -15,9 +15,9 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Kunder */}
+          {/* Case */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-white">Kunder</h4>
+            <h4 className="font-semibold text-white">Case</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
                 <Link href="#" className="hover:text-white transition-colors">

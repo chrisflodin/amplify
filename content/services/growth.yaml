@@ -3,19 +3,19 @@ slug: "growth"
 name: "Growth"
 title: "Growth"
 subtitle: "Från analys till skalbar tillväxt"
-description: "Datadriven tillväxt och konverteringsoptimering"
-shortDescription: "Vi utvecklar och implementerar strategier som driver mätbar tillväxt och ökar din lönsamhet."
+description: "Datadriven tillväxt och konverteringsoptimering för företag som vill växa digitalt. Vi kombinerar marknadsföring, content marketing och sökordsoptimering för att skapa resultat."
+shortDescription: "Utveckling och implementering av strategier som driver mätbar tillväxt, stärker din digitala närvaro och ökar din lönsamhet – från webbutveckling till marknadsföring."
 order: 9
 features:
   - "Tillväxtanalys"
-  - "Konverteringsoptimering (CRO)"
   - "Automatisering och leadgenerering"
+  - "Konverteringsoptimering (CRO)"
   - "Prestandamätning och rapportering"
-detailedDescription: "Vi hjälper dig att växa genom att analysera data, optimera konverteringar och automatisera processer. Med fokus på resultat och ständig förbättring skapar vi en grund för långsiktig tillväxt."
+detailedDescription: "Vi hjälper dig att växa genom att analysera data, optimera konverteringar och automatisera processer. Med fokus på resultat och ständig förbättring skapar vi en grund för långsiktig tillväxt och digital framgång."
 
 sections:
   - title: "Tillväxtstrategi"
-    description: "Vi utvecklar en datadriven strategi som lägger grunden för långsiktig och hållbar tillväxt. Genom målgruppsanalys, kundresa och strategisk planering identifierar vi nya möjligheter och skapar en konkret väg mot ökad lönsamhet."
+    description: "Vi utvecklar en strategi som lägger grunden för långsiktig och hållbar tillväxt. Genom målgruppsanalys, kundresa och strategisk planering identifierar vi nya möjligheter och skapar en konkret väg mot ökad lönsamhet."
     features:
       - title: "Målgruppsanalys"
         description: "Vi analyserar din målgrupp och marknad för att identifiera nya tillväxtmöjligheter."
@@ -25,17 +25,15 @@ sections:
         description: "Vi tar fram en konkret plan för att driva tillväxt och nå dina affärsmål."
 
   - title: "Konverteringsoptimering"
-    description: "Vi ökar din lönsamhet genom att optimera konverteringar och förbättra användarupplevelsen. Med A/B-testning, funnel-analys och UX-förbättringar maximerar vi varje steg i sälj- och marknadsföringstratten."
+    description: "Vi ökar din lönsamhet genom att optimera konverteringar och förbättra användarupplevelsen. Med funnel-analys och UX-förbättringar maximerar vi varje steg i sälj- och marknadsföringstratten."
     features:
-      - title: "A/B-testning"
-        description: "Vi testar och optimerar olika delar av din webbplats för att maximera konverteringsgraden."
       - title: "Funnel-analys"
         description: "Vi analyserar och förbättrar varje steg i sälj- och marknadsföringstratten."
       - title: "UX-förbättringar"
         description: "Vi identifierar och åtgärdar hinder i användarupplevelsen för att öka avslut och försäljning."
 
   - title: "Automatisering och analys"
-    description: "Vi automatiserar och analyserar för att skapa en skalbar och effektiv tillväxtresa. Med leadgenerering, prestandamätning och löpande optimering säkerställer vi att dina tillväxtinsatser ger mätbara resultat."
+    description: "Vi automatiserar och analyserar för att skapa en skalbar och effektiv tillväxtresa. Med leadgenerering, prestandamätning, content marketing och löpande optimering säkerställer vi att dina tillväxtinsatser ger mätbara resultat och stärker din digitala närvaro."
     features:
       - title: "Leadgenerering"
         description: "Vi implementerar automatiserade processer för att generera och vårda leads."

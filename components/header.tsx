@@ -10,8 +10,8 @@ export default function Header() {
     { name: "Tjänster", href: "/tjanster", type: "page" },
     { name: "Uppdrag", href: "/uppdrag", type: "page" },
     // { name: "Artiklar", href: "/artiklar", type: "page" },
-    { name: "Kontakt", href: "/kontakt", type: "page" },
     { name: "Lediga jobb", href: "/jobb", type: "page" },
+    { name: "Kontakt", href: "/kontakt", type: "page" },
     // { name: "Om oss", href: "/om-oss", type: "anchor" },
   ];
 

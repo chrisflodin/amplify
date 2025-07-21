@@ -9,13 +9,13 @@ interface HeroSectionProps {
 
 export default function HeroSection({ projects }: HeroSectionProps) {
   return (
-    <section className="bg-brand-black text-white min-h-screen flex items-center pt-16">
+    <section className="bg-brand-black  text-white min-h-screen flex items-center pt-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-start md:gap-8 lg:gap-2">
           {/* Left Column - Text Content */}
-          <div className="space-y-8">
-            <div className="space-y-6">
-              <h1 className="hero-title text-white">
+          <div className="space-y-4">
+            <div className="space-y-4">
+              <h1 className="hero-title text-white max-w-2xl">
                 Vi bygger din digitala framgång
               </h1>
               <p className="hero-subtitle text-gray-300">
@@ -38,7 +38,9 @@ export default function HeroSection({ projects }: HeroSectionProps) {
           </div>
 
           {/* Right Column - Carousel with Suspense for partial pre-rendering */}
-          <HeroCarousel projects={projects} />
+          <div className="hidden lg:block -mt-14">
+            <HeroCarousel projects={projects} />
+          </div>
         </div>
       </div>
     </section>

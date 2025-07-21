@@ -15,11 +15,11 @@ body {
 @layer components {
   /* Hero Title - Largest heading for landing pages */
   .hero-title {
-    @apply text-6xl lg:text-[90px] font-inter font-medium leading-tight;
+    @apply text-6xl lg:text-[114px] font-inter font-medium leading-[1.10];
   }
 
   .hero-subtitle {
-    @apply text-2xl lg:text-[34px] max-w-2xl font-sans font-medium leading-tight mb-4;
+    @apply text-2xl lg:text-[32px] max-w-2xl font-sans font-light leading-10 mb-4;
   }
 
   /* Heading System - Reusable throughout the site */

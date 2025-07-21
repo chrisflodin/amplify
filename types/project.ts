@@ -6,7 +6,6 @@ export interface Project {
   category: string;
   year: string;
   duration: string;
-  technologies: string[];
   results: string;
   image: string;
   description: string;

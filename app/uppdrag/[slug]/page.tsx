@@ -37,7 +37,6 @@ export async function generateMetadata({
     description,
     keywords: [
       project.category,
-      ...project.technologies,
       "digital utveckling",
       "webbdesign",
       "amplify",

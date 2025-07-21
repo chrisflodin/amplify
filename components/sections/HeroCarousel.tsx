@@ -79,7 +79,26 @@ export default function HeroCarousel({ projects }: HeroCarouselProps) {
       <div className="flex-1 h-full relative">
         {/* Loading placeholder */}
         {!isCarouselReady && <HeroCarouselSkeleton />}
+        {isCarouselReady && (
+          <div className="absolute inset-0 flex flex-col justify-between h-full">
+            {/* <div className="bg-gradient-to-b from-brand-black to-transparent z-20 h-[15vh]"></div> */}
+            {/* Current: Softer fade with opacity control */}
+            {/* <div className="bg-gradient-to-b from-brand-black/80 via-brand-black/80 to-transparent z-20 h-[15vh]"></div> */}
 
+            {/* Alternative options you can try: */}
+
+            {/* Dramatic fade with sharp cutoff: */}
+            {/* <div className="bg-gradient-to-b from-brand-black via-brand-black/80 via-transparent to-transparent z-20 h-[20vh]"></div> */}
+
+            {/* Subtle with backdrop blur: */}
+            <div className="bg-gradient-to-b via-brand-black/80 from-brand-black to-transparent z-20 h-[15vh]"></div>
+
+            {/* Custom arbitrary gradient with precise control: */}
+            {/* <div className="bg-[linear-gradient(to_bottom,theme(colors.brand-black)_0%,theme(colors.brand-black/0.8)_30%,transparent_70%)] z-20 h-[18vh]"></div> */}
+
+            <div className="bg-gradient-to-b via-brand-black/80 from-brand-black to-transparent z-20 h-[15vh] rotate-180"></div>
+          </div>
+        )}
         <Carousel
           setApi={setApi}
           orientation="vertical"
@@ -95,6 +114,7 @@ export default function HeroCarousel({ projects }: HeroCarouselProps) {
               : "opacity-0 translate-y-4 scale-95"
           }`}
         >
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-transparent to-brand-black z-20"></div> */}
           <CarouselContent className="h-[400px] -mt-2">
             {cards.map((card, index) => (
               <CarouselItem key={index} className="pt-2 basis-1/2">
@@ -117,7 +137,7 @@ export default function HeroCarousel({ projects }: HeroCarouselProps) {
                       {/* Glass morphism overlay */}
 
                       {/* Gradient overlay on hover */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                       <CardContent className="absolute bottom-0 left-0 right-0 z-10 p-4 bg-black/80 backdrop-blur-sm rounded-b-xl">
                         <div className="flex items-center justify-between">

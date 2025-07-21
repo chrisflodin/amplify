@@ -6,9 +6,26 @@ import { useEffect } from "react";
 // Google Analytics tracking ID
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
+// Check if we should disable analytics (development mode or localhost)
+const shouldDisableAnalytics = () => {
+  if (typeof window === "undefined") return true;
+
+  const isDevelopment = process.env.NODE_ENV === "development";
+  const isLocalhost =
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1" ||
+    window.location.hostname === "0.0.0.0";
+
+  return isDevelopment || isLocalhost;
+};
+
 // Google Analytics pageview tracking
 export const pageview = (url: string) => {
-  if (typeof window !== "undefined" && GA_TRACKING_ID) {
+  if (
+    typeof window !== "undefined" &&
+    GA_TRACKING_ID &&
+    !shouldDisableAnalytics()
+  ) {
     (window as any).gtag("config", GA_TRACKING_ID, {
       page_path: url,
     });
@@ -27,7 +44,11 @@ export const event = ({
   label?: string;
   value?: number;
 }) => {
-  if (typeof window !== "undefined" && GA_TRACKING_ID) {
+  if (
+    typeof window !== "undefined" &&
+    GA_TRACKING_ID &&
+    !shouldDisableAnalytics()
+  ) {
     (window as any).gtag("event", action, {
       event_category: category,
       event_label: label,
@@ -39,7 +60,7 @@ export const event = ({
 // Google Analytics component
 export default function GoogleAnalytics() {
   useEffect(() => {
-    if (GA_TRACKING_ID) {
+    if (GA_TRACKING_ID && !shouldDisableAnalytics()) {
       // Initialize gtag function
       (window as any).dataLayer = (window as any).dataLayer || [];
       (window as any).gtag = function gtag() {
@@ -50,8 +71,11 @@ export default function GoogleAnalytics() {
     }
   }, []);
 
-  // Don't render anything if no tracking ID
-  if (!GA_TRACKING_ID) {
+  // Don't render anything if no tracking ID or if analytics should be disabled
+  if (!GA_TRACKING_ID || shouldDisableAnalytics()) {
+    if (process.env.NODE_ENV === "development") {
+      console.log("🚫 Google Analytics disabled for local development");
+    }
     return null;
   }
 

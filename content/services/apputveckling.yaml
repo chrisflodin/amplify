@@ -15,7 +15,7 @@ detailedDescription: "Amplify digital byrå skapar appar som inte bara fungerar 
 
 sections:
   - title: "Plattformsutveckling"
-    description: "Vi utvecklar appar med React Native för både iOS och Android. Med fokus på prestanda, säkerhet, webbutveckling och skalbarhet bygger vi lösningar som fungerar sömlöst på flera plattformar och ger maximal räckvidd och effektivitet för ditt företag."
+    description: "Vi utvecklar appar med React Native för både iOS och Android. Med fokus på prestanda, säkerhet och skalbarhet bygger vi lösningar som fungerar sömlöst på flera plattformar och ger maximal räckvidd."
     features:
       - title: "iOS och Android med React Native"
         description: "Vi utvecklar appar för både iOS och Android med React Native för maximal räckvidd och effektivitet."
@@ -25,10 +25,10 @@ sections:
         description: "Vi bygger robusta backend-lösningar och integrerar API:er för att ge din app kraftfull funktionalitet."
 
   - title: "Användarupplevelse och design"
-    description: "En bra app bygger på en stark användarupplevelse och modern design. Vi fokuserar på engagerande interaktioner som gör appen enkel, rolig och tillgänglig för alla användare – oavsett behov, enhet eller plattform."
+    description: "En bra app bygger på en stark användarupplevelse och modern design. Vi fokuserar på engagerande interaktioner som gör appen enkel och tillgänglig för användare."
     features:
       - title: "Intuitiva gränssnitt"
-        description: "Vi designar användarvänliga gränssnitt som gör appen enkel och rolig att använda."
+        description: "Vi designar användarvänliga gränssnitt som gör appen enkel att använda."
       - title: "Interaktionsdesign"
         description: "Vi skapar engagerande interaktioner som ökar användarnas engagemang och lojalitet."
 

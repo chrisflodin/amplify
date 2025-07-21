@@ -9,7 +9,7 @@ interface ContactSectionProps {
 
 export default function ContactSection({
   title = "Kontakta oss",
-  subtitle = "Boka ett möte eller skicka oss ett meddelande så återkommer vi snarast",
+  subtitle = "Boka ett möte eller skicka oss ett meddelande så återkommer vi inom kort",
 }: ContactSectionProps) {
   return (
     <section id="kontakt" className="py-20 bg-brand-black text-white">

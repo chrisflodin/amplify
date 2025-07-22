@@ -20,7 +20,7 @@ export default function HeroSection({ projects }: HeroSectionProps) {
               </h1>
               <p className="hero-subtitle text-gray-300">
                 En digital byrå som har hjälpt några av Sveriges mest
-                framgångsrika entreprenörer med deras hemsidor och
+                framgångsrika entreprenörer med deras appar, webb och
                 marknadsföring. <br />
               </p>
             </div>

@@ -1,0 +1,64 @@
+id: "geo"
+slug: "geo"
+name: "Generative Engine Optimization (GEO)"
+title: "Generative Engine Optimization (GEO)"
+subtitle: "Bli rekommenderad av framtidens AI"
+description: "Vi hjälper företag att bli citerade, synliga och relevanta i AI-assistenter och generativa sökverktyg. Med GEO optimerar vi ert innehåll för att prioriteras av LLM:er som ChatGPT, Perplexity och Bing Copilot – långt bortom traditionell SEO."
+shortDescription: "Maximera er synlighet i AI-assistenter och generativa sökverktyg med GEO – nästa generations SEO."
+order: 9
+features:
+  - "Innehållsstrategi för LLM-indexering"
+  - "Implementering av strukturerad data och maskinläsbarhet"
+  - "Optimering för synlighet i AI-drivna sökverktyg"
+  - "Byggande av LLM-förankrade backlinks"
+  - "Spårning och analys av GEO-effekt"
+detailedDescription: "GEO (Generative Engine Optimization) är nästa steg inom digital synlighet. Vi ser till att ert innehåll prioriteras, citeras och återanvänds av generativa AI-modeller. Med djup förståelse för hur LLM:er tolkar, hämtar och presenterar information bygger vi en strategi som gör att ni rekommenderas av framtidens AI."
+
+sections:
+  - title: "Prompt engineering & LLM-logik"
+    description: "Vi har expertis i hur generativa AI-modeller tolkar och genererar svar, vilket gör att vi kan skapa innehåll som är optimerat för att prioriteras av LLM:er. Det innebär att vi strukturerar och formulerar ert budskap så att det blir lätt att citera och använda i AI-svar – något de flesta SEO-byråer missar."
+    features:
+      - title: "LLM-anpassad copy"
+        description: "Vi skriver och strukturerar innehåll så att det föredras av AI-modeller och ökar chansen att bli citerad."
+      - title: "Prompt engineering"
+        description: "Vi förstår hur prompts och frågor till AI-modeller fungerar och optimerar innehållet därefter."
+
+  - title: "Strukturerad data & maskinläsbarhet"
+    description: "Vi implementerar schema.org, JSON-LD och andra former av strukturerad data för att maximera chansen att AI-motorer förstår innehållets kontext. Det gör ert innehåll mer tillgängligt för både sökmotorer och AI-assistenter."
+    features:
+      - title: "Schema.org & JSON-LD"
+        description: "Vi märker upp innehållet med rätt strukturerad data för maximal maskinläsbarhet."
+      - title: "API-anpassning"
+        description: "Vi ser till att ert innehåll kan återanvändas av AI:er och externa tjänster via öppna standarder."
+
+  - title: "Innehållsstrategi för LLM-indexering"
+    description: "Vi bygger innehåll som är pedagogiskt, direkt och faktabaserat – vilket ökar sannolikheten att det citeras av AI-modeller i generativa svar. Vi optimerar för både mänskliga läsare och språkmodellers sätt att resonera och hämta fakta."
+    features:
+      - title: "Faktabaserad copy"
+        description: "Vi fokuserar på tydliga definitioner, punktlistor och objektiva fakta."
+      - title: "Pedagogisk struktur"
+        description: "Vi strukturerar innehållet så att det är lätt att indexera och återanvända för AI-modeller."
+
+  - title: "Synlighet i LLM-sökverktyg"
+    description: "Vi säkerställer att ert innehåll syns, citeras och länkas av moderna AI-drivna sökverktyg som används av miljoner varje dag. GEO gör er top-of-mind i framtidens söklandskap, där traditionell SEO inte räcker till."
+    features:
+      - title: "Optimering för AI-sök"
+        description: "Vi analyserar och anpassar innehållet för att öka synligheten i ChatGPT, Perplexity, Bing Copilot m.fl."
+      - title: "Citeringsstrategi"
+        description: "Vi bygger innehåll som ökar chansen att bli citerad och länkad av AI-assistenter."
+
+  - title: "LLM-förankrade backlinks"
+    description: "Vi fokuserar på att bygga länkar från källor som ofta används av generativa AI:er som referensmaterial, t.ex. Wikipedia och auktoritativa sajter. Det stärker både traditionell SEO och GEO."
+    features:
+      - title: "AI-relevanta länkar"
+        description: "Vi prioriterar källor som är viktiga för LLM:er, inte bara domänauktoritet."
+      - title: "Backlink-strategi för GEO"
+        description: "Vi utvecklar en länkstrategi som stärker er synlighet i AI-sammanhang."
+
+  - title: "Spårning & analys av GEO-effekt"
+    description: "Vi använder verktyg som visar hur ofta ert innehåll citeras i AI-svar och anpassar vår strategi därefter. GEO är nytt – men vi mäter och optimerar baserat på faktiska resultat."
+    features:
+      - title: "Citeringsspårning"
+        description: "Vi mäter hur ofta och var ert innehåll citeras av AI-modeller."
+      - title: "Datadriven optimering"
+        description: "Vi justerar strategin löpande baserat på insikter och resultat."

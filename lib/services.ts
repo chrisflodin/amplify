@@ -135,15 +135,15 @@ export function getAllServices(): Service[] {
 
   // Hardcoded order of slugs
   const ORDER = [
+    "geo",
+    "seo",
     "webbutveckling",
     "apputveckling",
-    "branding",
-    "ux-ui-design",
     "e-handel",
-    "seo",
-    "content",
+    "ux-ui-design",
     "growth",
-    "foto-video",
+    "branding",
+    "content",
   ];
 
   // Sort services by the ORDER array, append any not in the list at the end
@@ -151,7 +151,6 @@ export function getAllServices(): Service[] {
     ...ORDER.map((slug) => services.find((s) => s.slug === slug)).filter(
       (s): s is Service => Boolean(s)
     ),
-    ...services.filter((s) => !ORDER.includes(s.slug)),
   ];
 
   // Cache the results

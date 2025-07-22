@@ -3,14 +3,16 @@ slug: "content"
 name: "Content"
 title: "Content"
 subtitle: "Från strategi till publicering"
-shortDescription: "Strategiskt innehåll som stärker din digitala närvaro och driver resultat – även med foto, video, animationer och videointervjuer."
+shortDescription: "Strategiskt innehåll som stärker din digitala närvaro och driver resultat – med text, foto, video, animationer och videointervjuer."
 order: 8
 features:
   - "Innehållsstrategi"
   - "Storytelling"
-  - "Text-, bild och video"
+  - "Text, bild och video"
   - "Contentplanering"
-detailedDescription: "Vi hjälper dig att nå ut med rätt budskap till rätt målgrupp. Med en tydlig strategi, engagerande texter och innehåll som skapar relationer ökar vi din synlighet online."
+  - "Professionell foto- och videoproduktion"
+  - "Redigering & efterbearbetning"
+detailedDescription: "Vi hjälper dig att nå ut med rätt budskap till rätt målgrupp. Med en tydlig strategi, engagerande texter och visuellt innehåll. Vi erbjuder allt från kreativ konceptutveckling till professionell produktion och smart distribution – för ett innehåll som engagerar, inspirerar och skapar resultat."
 
 sections:
   - title: "Innehållsstrategi"
@@ -24,12 +26,14 @@ sections:
         description: "Vi tar fram en långsiktig plan för innehåll som stödjer dina affärsmål."
 
   - title: "Produktion"
-    description: "Vi producerar och publicerar innehåll som stärker din digitala närvaro och driver resultat. Med storytelling och unik content skapar vi engagerande material för ditt varumärke"
+    description: "Vi producerar och publicerar innehåll som stärker din digitala närvaro och driver resultat. Med storytelling, unikt content och visuellt material som foto och video skapar vi engagerande material för ditt varumärke. Vi erbjuder allt från fotografering och filmning till redigering, animation och efterbearbetning."
     features:
       - title: "Storytelling och copywriting"
         description: "Vi skapar berättelser och innehåll som engagerar och konverterar."
-      - title: "Videoproduktion"
-        description: "Vi producerar bilder, video, animationer och grafik – från animationer till videointervjuer – som stärker ditt budskap."
+      - title: "Redigering & efterbearbetning"
+        description: "Vi klipper, färgkorrigerar och ljudlägger för att skapa ett färdigt, professionellt resultat."
+      - title: "Animation & grafik"
+        description: "Vi animerar grafiska element och producerar visuella effekter som lyfter ditt budskap."
       - title: "Publiceringsplanering"
         description: "Vi ser till att innehållet publiceras vid rätt tidpunkt och i rätt kanaler."
 

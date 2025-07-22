@@ -9,7 +9,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ projects }: HeroSectionProps) {
   return (
-    <section className="bg-brand-black  text-white min-h-screen flex items-center pt-16">
+    <section className="bg-brand-black  text-white lg:min-h-screen flex lg:items-center pt-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-start md:gap-8 lg:gap-2">
           {/* Left Column - Text Content */}

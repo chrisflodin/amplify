@@ -107,7 +107,11 @@ export default function HeroCarousel({ projects }: HeroCarouselProps) {
                 <CarouselItem key={index} className="pt-2 basis-1/2">
                   <div className="p-1">
                     <Link href={`/uppdrag/${card.slug}`}>
-                      <Card className="group relative overflow-hidden rounded-3xl border border-white/10 text-white hover:scale-[1.01] transition-all duration-500 hover:shadow-2xl h-[30vh] cursor-pointer">
+                      <Card
+                        className={`group relative overflow-hidden rounded-3xl border border-white/10 text-white hover:scale-[1.01] transition-all duration-500 hover:shadow-2xl cursor-pointer ${
+                          isCarouselReady ? "h-[30vh]" : "h-[10vh]"
+                        }`}
+                      >
                         {/* Background Image */}
                         <div className="absolute inset-0">
                           <Image

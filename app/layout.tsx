@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="sv">
       <body
-        className={`${source_Sans_3.className} ${inter.variable} antialiased`}
+        className={`${source_Sans_3.className} ${inter.className} antialiased`}
       >
         <GoogleAnalytics />
         <Header />

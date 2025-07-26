@@ -1,0 +1,16 @@
+id: "geo"
+name: "GEO Configuration"
+hero:
+  title: "Sveriges främsta AI-byrå"
+  subtitle: "Vi skapar digitala lösningar som driver tillväxt och förbättrar kundupplevelsen. Från strategi till implementation."
+  ctaText: "Boka konsultation"
+services:
+  featured:
+    - "geo"
+    - "seo"
+    - "webbutveckling"
+  sectionsTitle: "Våra tjänster"
+  sectionsSubtitle: "Vi fokuserar på de tjänster som ger störst påverkan på din digitala tillväxt"
+meta:
+  title: "amplify - Transformera ditt företag digitalt"
+  description: "Digital transformation som driver tillväxt. Vi hjälper företag med strategisk utveckling, varumärkesbyggande och digital marknadsföring för hållbara resultat."

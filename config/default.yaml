@@ -1,0 +1,22 @@
+id: "default"
+name: "Default Configuration"
+hero:
+  title: "Vi bygger din digitala framgång"
+  subtitle: "En digital byrå som har hjälpt några av Sveriges mest framgångsrika entreprenörer med deras appar, webb och marknadsföring."
+  ctaText: "Kontakta oss"
+services:
+  featured:
+    - "geo"
+    - "seo"
+    - "webbutveckling"
+    - "apputveckling"
+    - "e-handel"
+    - "ux-ui-design"
+    - "growth"
+    - "branding"
+    - "content"
+  sectionsTitle: "Våra tjänster"
+  sectionsSubtitle: "Vi erbjuder omfattande digitala tjänster som hjälper ditt företag att växa och lyckas online"
+meta:
+  title: "amplify - Vi bygger din digitala framgång"
+  description: "En digital byrå som hjälper företag växa med strategi, design och digital marknadsföring. Specialister på apputveckling, webbutveckling och SEO."

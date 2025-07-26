@@ -1,3 +1,4 @@
+import { getConfig } from "@/lib/config";
 import type { Project } from "@/types/project";
 import Link from "next/link";
 import { Button } from "../ui/button";
@@ -8,6 +9,8 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ projects }: HeroSectionProps) {
+  const config = getConfig();
+
   return (
     <section className="bg-brand-black  text-white lg:min-h-screen flex lg:items-center pt-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,12 +19,11 @@ export default function HeroSection({ projects }: HeroSectionProps) {
           <div className="space-y-4">
             <div className="space-y-4">
               <h1 className="hero-title text-white max-w-2xl">
-                Vi bygger din digitala framgång
+                {config.hero.title}
               </h1>
               <p className="hero-subtitle text-gray-300">
-                En digital byrå som har hjälpt några av Sveriges mest
-                framgångsrika entreprenörer med deras appar, webb och
-                marknadsföring. <br />
+                {config.hero.subtitle}
+                <br />
               </p>
             </div>
 
@@ -31,7 +33,7 @@ export default function HeroSection({ projects }: HeroSectionProps) {
                   size="lg"
                   className="bg-white text-brand-black hover:bg-gray-100 font-semibold px-8 py-4 text-lg"
                 >
-                  Kontakta oss
+                  {config.hero.ctaText || "Kontakta oss"}
                 </Button>
               </Link>
             </div>

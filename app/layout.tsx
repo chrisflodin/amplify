@@ -2,14 +2,16 @@ import GoogleAnalytics from "@/components/analytics";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { Toaster } from "@/components/ui/toaster";
+import { getConfig } from "@/lib/config";
 import type { Metadata } from "next";
 import { inter, source_Sans_3 } from "./fonts";
 import "./globals.css";
 
+const config = getConfig();
+
 export const metadata: Metadata = {
-  title: "amplify - Vi bygger din digitala framgång",
-  description:
-    "Vi har hjälpt några av Sveriges mest framgångsrika entreprenörer att växla upp. Gör det du med.",
+  title: config.meta.title,
+  description: config.meta.description,
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "32x32", type: "image/png" },

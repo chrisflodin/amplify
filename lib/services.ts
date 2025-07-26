@@ -1,3 +1,4 @@
+import { getConfig } from "@/lib/config";
 import { Service, ServiceDetailData } from "@/types/service";
 import fs from "fs";
 import yaml from "js-yaml";
@@ -118,13 +119,13 @@ export function getServiceDetailsBySlug(
   }
 }
 
-export function getAllServices(): Service[] {
+export function getAllServices(customOrder?: string[]): Service[] {
   if (typeof window !== "undefined") {
     throw new Error("getAllServices can only be called on the server side");
   }
 
-  // Use cache if available
-  if (servicesCache) {
+  // Use cache if available and no custom order specified
+  if (servicesCache && !customOrder) {
     return servicesCache;
   }
 
@@ -133,18 +134,20 @@ export function getAllServices(): Service[] {
     .map((slug) => getServiceBySlug(slug))
     .filter((service): service is Service => service !== undefined);
 
-  // Hardcoded order of slugs
-  const ORDER = [
-    "geo",
-    "seo",
-    "webbutveckling",
-    "apputveckling",
-    "e-handel",
-    "ux-ui-design",
-    "growth",
-    "branding",
-    "content",
-  ];
+  // Get order from configuration or use custom order or fallback to default
+  const config = getConfig();
+  const ORDER = customOrder ||
+    config.services.featured || [
+      "geo",
+      "seo",
+      "webbutveckling",
+      "apputveckling",
+      "e-handel",
+      "ux-ui-design",
+      "growth",
+      "branding",
+      "content",
+    ];
 
   // Sort services by the ORDER array, append any not in the list at the end
   const orderedServices = [
@@ -153,7 +156,10 @@ export function getAllServices(): Service[] {
     ),
   ];
 
-  // Cache the results
-  servicesCache = orderedServices;
+  // Cache the results only if no custom order was used
+  if (!customOrder) {
+    servicesCache = orderedServices;
+  }
+
   return orderedServices;
 }

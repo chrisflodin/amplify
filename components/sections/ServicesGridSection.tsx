@@ -1,7 +1,9 @@
+import { getConfig } from "@/lib/config";
 import { getAllServices } from "@/lib/services";
 import Link from "next/link";
 
 export default function ServicesGridSection() {
+  const config = getConfig();
   const services = getAllServices();
 
   return (
@@ -9,11 +11,10 @@ export default function ServicesGridSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-inter font-bold text-white mb-6">
-            Våra tjänster
+            {config.services.sectionsTitle}
           </h2>
           <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
-            Vi erbjuder omfattande digitala tjänster som hjälper ditt företag
-            att växa och lyckas online
+            {config.services.sectionsSubtitle}
           </p>
         </div>
 

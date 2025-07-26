@@ -8,6 +8,8 @@ Content
 SEO
 Growth
 
+# GEO
+
 
 # website
 ### Hero

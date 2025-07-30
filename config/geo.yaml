@@ -1,16 +1,19 @@
 id: "geo"
-name: "GEO Configuration"
+name: "GEO – Generative Engine Optimization"
 hero:
-  title: "Sveriges främsta AI-byrå"
-  subtitle: "Vi skapar digitala lösningar som driver tillväxt och förbättrar kundupplevelsen. Från strategi till implementation."
-  ctaText: "Boka konsultation"
+  title: "Digital Byrå, Experter på GEO"
+  subtitle: "Vi får era produkter att rekommenderas av ChatGPT och andra AI-modeller"
+  ctaText: "Kontaka oss"
 services:
   featured:
     - "geo"
     - "seo"
     - "webbutveckling"
+    - "apputveckling"
+    - "e-handel"
+    - "ux-ui-design"
   sectionsTitle: "Våra tjänster"
-  sectionsSubtitle: "Vi fokuserar på de tjänster som ger störst påverkan på din digitala tillväxt"
+  sectionsSubtitle: "Vi erbjuder tjänster som hjälper ditt företag att växa"
 meta:
-  title: "amplify - Transformera ditt företag digitalt"
-  description: "Digital transformation som driver tillväxt. Vi hjälper företag med strategisk utveckling, varumärkesbyggande och digital marknadsföring för hållbara resultat."
+  title: "amplify - Vi bygger din digitala framgång"
+  description: "En digital byrå som hjälper företag växa med strategi, design och digital marknadsföring. Specialister på apputveckling, webbutveckling och SEO."

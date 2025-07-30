@@ -12,10 +12,9 @@ export default function ContactPage() {
             <h1 className="text-5xl lg:text-7xl font-inter font-bold mb-6">
               Kontakta oss
             </h1>
-            <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed mb-8">
-              Redo att ta nästa steg? Vi hjälper dig att förverkliga dina
-              digitala mål. Boka ett möte eller skicka oss ett meddelande så
-              återkommer vi inom 24 timmar.
+            <p className="text-xl md:max-w-2xl lg:text-2xl text-gray-300 leading-relaxed mb-8">
+              Boka ett möte eller skicka oss ett meddelande så återkommer vi
+              inom 24 timmar.
             </p>
           </div>
         </div>

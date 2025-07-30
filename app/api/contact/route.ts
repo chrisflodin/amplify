@@ -21,9 +21,9 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>", // You'll need to change this to your domain
-      to: ["updates.fromamplify.com"], // Your email
-      subject: "New Contact Form Submission",
+      from: "Amplify Contact Form <from@updates.weareamplify.se>",
+      to: ["christopher.flodin@weareamplify.se"],
+      subject: "Amplify Contact Form",
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
           <h2 style="color: #2c3e50;">New Contact Form Submission</h2>

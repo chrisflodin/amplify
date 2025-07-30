@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     const validatedData = contactSchema.parse(body);
 
     // Send email using Resend
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: "Amplify Contact Form <from@updates.weareamplify.se>",
       to: ["christopher.flodin@weareamplify.se"],
       subject: "Amplify Contact Form",

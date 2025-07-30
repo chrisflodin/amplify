@@ -1,6 +1,7 @@
 import GoogleAnalytics from "@/components/analytics";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { getConfig } from "@/lib/config";
 import type { Metadata } from "next";
@@ -38,6 +39,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <Toaster />
+        <SonnerToaster />
       </body>
     </html>
   );

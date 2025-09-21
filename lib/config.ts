@@ -5,10 +5,7 @@ import { ConfigVariant, WebsiteConfig } from "@/types/config";
  * Get the current configuration variant from environment variables
  */
 export function getConfigVariant(): ConfigVariant {
-  const variant =
-    process.env.NEXT_PUBLIC_CONFIG_VARIANT ||
-    process.env.CONFIG_VARIANT ||
-    "default";
+  const variant = process.env.NEXT_PUBLIC_CONFIG_VARIANT || "default";
   return variant === "geo" ? "geo" : "default";
 }
 

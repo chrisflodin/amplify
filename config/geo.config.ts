@@ -1,0 +1,29 @@
+import { WebsiteConfig } from "@/types/config";
+
+export const geoConfig: WebsiteConfig = {
+  id: "geo",
+  name: "GEO – Generative Engine Optimization",
+  hero: {
+    title: "Digital Byrå, Experter på GEO",
+    subtitle:
+      "Vi får era produkter att rekommenderas av ChatGPT och andra AI-modeller",
+    ctaText: "Kontaka oss",
+  },
+  services: {
+    featured: [
+      "geo",
+      "seo",
+      "webbutveckling",
+      "apputveckling",
+      "e-handel",
+      "ux-ui-design",
+    ],
+    sectionsTitle: "Våra tjänster",
+    sectionsSubtitle: "Vi erbjuder tjänster som hjälper ditt företag att växa",
+  },
+  meta: {
+    title: "amplify - Vi bygger din digitala framgång",
+    description:
+      "En digital byrå som hjälper företag växa med strategi, design och digital marknadsföring. Specialister på apputveckling, webbutveckling och SEO.",
+  },
+};

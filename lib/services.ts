@@ -1,4 +1,3 @@
-import { getConfig } from "@/lib/config";
 import { Service, ServiceDetailData } from "@/types/service";
 import fs from "fs";
 import yaml from "js-yaml";
@@ -134,20 +133,18 @@ export function getAllServices(customOrder?: string[]): Service[] {
     .map((slug) => getServiceBySlug(slug))
     .filter((service): service is Service => service !== undefined);
 
-  // Get order from configuration or use custom order or fallback to default
-  const config = getConfig();
-  const ORDER = customOrder ||
-    config.services.featured || [
-      "geo",
-      "seo",
-      "webbutveckling",
-      "apputveckling",
-      "e-handel",
-      "ux-ui-design",
-      "growth",
-      "branding",
-      "content",
-    ];
+  // Use custom order or fallback to default
+  const ORDER = customOrder || [
+    "geo",
+    "seo",
+    "webbutveckling",
+    "apputveckling",
+    "e-handel",
+    "ux-ui-design",
+    "growth",
+    "branding",
+    "content",
+  ];
 
   // Sort services by the ORDER array, append any not in the list at the end
   const orderedServices = [

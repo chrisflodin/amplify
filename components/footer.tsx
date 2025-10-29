@@ -1,6 +1,8 @@
+import { getAllProjects } from "@/lib/projects";
 import Link from "next/link";
 
 export default function Footer() {
+  const projects = getAllProjects();
   return (
     <footer className="bg-brand-black text-white py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,21 +21,16 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold text-white">Case</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Hartwall
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  CRDBAG
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Stockholm Plastikkirurgi
-                </Link>
-              </li>
+              {projects.map((project) => (
+                <li key={project.slug}>
+                  <Link
+                    href={`/uppdrag/${project.slug}`}
+                    className="hover:text-white transition-colors"
+                  >
+                    {project.shortTitle}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -47,13 +44,7 @@ export default function Footer() {
                 Uppdrag
               </Link>
               <Link
-                href="/om-oss"
-                className="text-sm text-gray-400 hover:text-white transition-colors"
-              >
-                Om oss
-              </Link>
-              <Link
-                href="/lediga-jobb"
+                href="/jobb"
                 className="text-sm text-gray-400 hover:text-white transition-colors"
               >
                 Lediga jobb
@@ -65,7 +56,7 @@ export default function Footer() {
                 Artiklar
               </Link> */}
               <Link
-                href="#kontakt"
+                href="/kontakt"
                 className="text-sm text-gray-400 hover:text-white transition-colors"
               >
                 Kontakt

@@ -16,12 +16,12 @@ export default function HeroSection({ projects }: HeroSectionProps) {
           <div className="space-y-4">
             <div className="space-y-4">
               <h1 className="hero-title text-white max-w-2xl">
-                Vi bygger din digitala framgång
+                Vi skapar tillväxt som märks
               </h1>
               <p className="hero-subtitle text-gray-300">
-                En digital byrå som har hjälpt några av Sveriges mest
-                framgångsrika entreprenörer med deras appar, webb och
-                marknadsföring.
+                Vi hjälper företag att växa genom datadriven marknadsföring,
+                smart teknik och kreativ strategi. Med en teknisk edge optimerar
+                vi varje steg – från trafik till konvertering.
                 <br />
               </p>
             </div>

@@ -135,13 +135,13 @@ export function getAllServices(customOrder?: string[]): Service[] {
 
   // Use custom order or fallback to default
   const ORDER = customOrder || [
+    "growth",
     "geo",
     "seo",
     "webbutveckling",
     "apputveckling",
     "e-handel",
     "ux-ui-design",
-    "growth",
     "branding",
     "content",
   ];

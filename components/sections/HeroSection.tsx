@@ -1,6 +1,4 @@
 import type { Project } from "@/types/project";
-import Link from "next/link";
-import { Button } from "../ui/button";
 import HeroCarousel from "./HeroCarousel";
 
 interface HeroSectionProps {
@@ -16,17 +14,26 @@ export default function HeroSection({ projects }: HeroSectionProps) {
           <div className="space-y-4">
             <div className="space-y-4">
               <h1 className="hero-title text-white max-w-2xl">
-                Vi skapar tillväxt som märks
+                EJ AKTIVA JUST NU
               </h1>
+              {/* <h1 className="hero-title text-white max-w-2xl">
+                Vi skapar tillväxt som märks
+              </h1> */}
               <p className="hero-subtitle text-gray-300">
+                Jag som drivit Amplify gör inte det längre och tagit upp
+                anställning istället. Hör gärna av er om ni vill att jag
+                rekommenderar någon annan byrå åt er.
+                <br />
+              </p>
+              {/* <p className="hero-subtitle text-gray-300">
                 Vi hjälper företag att växa genom datadriven marknadsföring,
                 smart teknik och kreativ strategi. Med en teknisk edge optimerar
                 vi varje steg – från trafik till konvertering.
                 <br />
-              </p>
+              </p> */}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* <div className="flex flex-col sm:flex-row gap-4">
               <Link href={"/kontakt"}>
                 <Button
                   size="lg"
@@ -35,7 +42,7 @@ export default function HeroSection({ projects }: HeroSectionProps) {
                   Kontakta oss
                 </Button>
               </Link>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Column - Carousel with Suspense for partial pre-rendering */}
